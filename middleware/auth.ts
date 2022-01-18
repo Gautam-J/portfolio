@@ -1,17 +1,16 @@
+import { NextApiHandler, NextApiRequest, NextApiResponse } from "next";
+
 const passwd = process.env.AUTH_PASSWD;
 
-// TODO: add types
-const auth = (handler) => {
-  return (req, res) => {
+const auth = (handler: NextApiHandler) => {
+  return (req: NextApiRequest, res: NextApiResponse) => {
     const authPasswd = req.headers["x-auth-token"];
 
-    if (!authPasswd) {
+    if (!authPasswd)
       return res.status(401).json({ msg: "Authorization denied." });
-    }
 
-    if (authPasswd !== passwd) {
+    if (authPasswd !== passwd)
       return res.status(401).json({ msg: "Authorization denied." });
-    }
 
     return handler(req, res);
   };
