@@ -20,8 +20,7 @@ class MyDocument extends Document {
 
         <Head />
 
-        {/* TODO: add dark theme */}
-        <body className="tracking-tight font-fira bg-light-base00">
+        <body className="tracking-tight font-fira bg-light-base00 dark:bg-dark-base00">
           <Main />
           <NextScript />
         </body>
