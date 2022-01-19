@@ -4,6 +4,9 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      fira: ["Fira Code", "monospace"],
+    },
     extend: {
       colors: {
         // GruvBox Light Hard Contrast
