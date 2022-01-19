@@ -19,7 +19,8 @@ class MyDocument extends Document {
         {/* TODO: add meta tags for SEO */}
 
         <Head />
-        {/* TODO: add bg dark */}
+
+        {/* TODO: add dark theme */}
         <body className="tracking-tight font-fira bg-light-base00">
           <Main />
           <NextScript />
