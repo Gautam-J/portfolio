@@ -1,6 +1,7 @@
 import { FunctionComponent, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { useState } from "react";
+import { MdOutlineLightMode, MdOutlineDarkMode } from "react-icons/md";
 
 const ThemeChanger: FunctionComponent = () => {
   const [mounted, setMounted] = useState(false);
@@ -16,8 +17,8 @@ const ThemeChanger: FunctionComponent = () => {
 
   return (
     <button onClick={changeTheme}>
-      {/* TODO: add icons */}
-      {theme === "light" ? <p>Dark Mode</p> : <p>Light Mode</p>}
+      {/* TODO: add hover text */}
+      {theme === "light" ? <MdOutlineDarkMode /> : <MdOutlineLightMode />}
     </button>
   );
 };
