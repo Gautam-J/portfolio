@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 .background {
-  @apply container border-4 border-blue-700 p-4 flex justify-center;
+  @apply container flex justify-center p-4 border-4 border-blue-700;
 }
 
 .heading {
-  @apply text-red-500 font-bold text-5xl;
+  @apply text-5xl text-red-500;
 }
