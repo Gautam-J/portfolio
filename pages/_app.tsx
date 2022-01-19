@@ -6,7 +6,7 @@ import { ThemeProvider } from "next-themes";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider attribute="class" defaultTheme="system">
+    <ThemeProvider attribute="class" defaultTheme="light">
       <div>
         <NavBar />
         <Component {...pageProps} />
