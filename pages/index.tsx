@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 
 const Home: NextPage = () => {
   return (
-    <div className="bg-light-base02 dark:bg-dark-base02">
+    <div className="bg-light-base00 dark:bg-dark-base00">
       <h1>Main Content of the Page!</h1>
     </div>
   );

@@ -15,10 +15,17 @@ const ThemeChanger: FunctionComponent = () => {
     setTheme(theme === "light" ? "dark" : "light");
   };
 
+  const className: string =
+    "w-7 h-7 text-light-base06 dark:text-dark-base0A transition duration-200 hover:scale-125";
+
   return (
-    <button onClick={changeTheme}>
-      {/* TODO: add hover text */}
-      {theme === "light" ? <MdOutlineDarkMode /> : <MdOutlineLightMode />}
+    <button onClick={changeTheme} className="outline-none">
+      {/* TODO: add hover text - $ sudo dark / light  */}
+      {theme === "light" ? (
+        <MdOutlineDarkMode className={className} />
+      ) : (
+        <MdOutlineLightMode className={className} />
+      )}
     </button>
   );
 };
