@@ -12,11 +12,11 @@ export interface IAbout {
 }
 
 export interface IExperience {
-  company: string;
-  position: string;
-  startDate: Date;
-  endDate?: Date | null;
-  onGoing?: boolean;
+  _id: string;
+  minStartDate: Date;
+  maxEndDate: Date;
+  onGoing: boolean;
+  positions: string[];
 }
 
 export interface IProps {
