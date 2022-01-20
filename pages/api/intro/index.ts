@@ -15,7 +15,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
       return res.json(roles);
     } catch (err) {
-      res.status(500).json({ msg: `${err.message}` });
+      let message: string = err instanceof Error ? err.message : "Server Error";
+      return res.status(500).json({ msg: message });
     }
   } else {
     return res.status(405).json({ msg: "method not allowed" });

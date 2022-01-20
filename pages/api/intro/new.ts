@@ -22,8 +22,9 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<IMessage>) => {
 
       await collection.insertOne(Role);
       return res.status(200).json({ msg: "success" });
-    } catch (err) {
-      return res.status(500).json({ msg: `${err.message}` });
+    } catch (err: unknown) {
+      let message: string = err instanceof Error ? err.message : "Server Error";
+      return res.status(500).json({ msg: message });
     }
   } else {
     return res.status(405).json({ msg: "method not allowed" });
