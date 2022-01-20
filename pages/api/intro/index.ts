@@ -1,15 +1,14 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import clientPromise from "../../../lib/mongodb";
 import auth from "../../../middleware/auth";
-import { IRole } from "../../../utils/types";
 
 export const getIntroData = async () => {
   const client = await clientPromise;
-  const roles = (await client
+  const roles = await client
     .db("db_one")
     .collection("intro")
     .find({})
-    .toArray()) as IRole[];
+    .toArray();
 
   return roles;
 };

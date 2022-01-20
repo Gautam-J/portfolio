@@ -18,38 +18,9 @@ const Home: NextPage<Props> = (props) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  let roles = await getIntroData();
-  roles.map((role) => {
-    role._id = role._id ? role._id.toString() : role._id;
-  });
-
-  console.log(roles);
+  const introData = await getIntroData();
+  const roles: IRole[] = JSON.parse(JSON.stringify(introData));
   return { props: { roles } };
 };
-
-// export const getStaticProps: GetStaticProps = async () => {
-//   const { VERCEL_ENV } = process.env;
-//   console.log(VERCEL_ENV);
-
-//   let baseUrl: string;
-//   if (VERCEL_ENV === "development") {
-//     baseUrl = "http://localhost:3000";
-//   } else {
-//     const { VERCEL_URL } = process.env;
-//     baseUrl = `https://${VERCEL_URL}`;
-//   }
-
-//   const data = await fetch(`${baseUrl}/api/intro`, {
-//     method: "GET",
-//     headers: {
-//       "Content-Type": "application/json",
-//       "x-auth-token": `${process.env.AUTH_PASSWD}`,
-//     },
-//   });
-
-//   const roles = await data.json();
-
-//   return { props: { roles } };
-// };
 
 export default Home;

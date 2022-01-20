@@ -1,7 +1,5 @@
-import { ObjectId } from "mongodb";
-
 export interface IRole {
-  _id?: ObjectId | string;
+  _id: string;
   role: string;
 }
 

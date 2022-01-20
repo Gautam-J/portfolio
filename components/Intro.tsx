@@ -28,7 +28,7 @@ const Intro: FunctionComponent<{
           <div className="col-start-2 col-span-full">
             {data.map((item) => (
               <p
-                key={`${item._id}`}
+                key={item._id}
                 className="pt-8 text-2xl font-semibold underline md:text-4xl text-light-base0D"
               >
                 {item.role}
