@@ -6,3 +6,7 @@ export interface IRole {
 export interface IMessage {
   msg: string;
 }
+
+export interface IAbout {
+  description: string;
+}
