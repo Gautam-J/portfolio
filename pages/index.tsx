@@ -1,11 +1,26 @@
-import type { NextPage } from "next";
+import type { GetStaticProps, NextApiResponse, NextPage } from "next";
+import Intro from "../components/Intro";
+import { IRole } from "../utils/types";
+import { getIntroData } from "./api/intro/index";
 
-const Home: NextPage = () => {
+interface Props {
+  roles: IRole[];
+}
+
+const Home: NextPage<Props> = (props) => {
+  const { roles } = props;
+
   return (
     <div className="bg-light-base00 dark:bg-dark-base00">
-      <h1>Main Content of the Page!</h1>
+      <Intro data={roles} />
     </div>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const introData = await getIntroData();
+  const roles: IRole[] = JSON.parse(JSON.stringify(introData));
+  return { props: { roles } };
 };
 
 export default Home;
