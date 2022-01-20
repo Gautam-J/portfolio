@@ -1,4 +1,4 @@
-import type { GetStaticProps, GetStaticPropsContext, NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import Intro from "../components/Intro";
 import { IRole } from "../utils/types";
 
@@ -18,6 +18,7 @@ const Home: NextPage<Props> = (props) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const { VERCEL_URL } = process.env;
+  console.log(VERCEL_URL);
   const data = await fetch(VERCEL_URL + "/api/intro", {
     method: "GET",
     headers: {
