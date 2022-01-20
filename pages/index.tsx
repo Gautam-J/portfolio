@@ -17,7 +17,8 @@ const Home: NextPage<Props> = (props) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const data = await fetch(process.env.VERCEL_URL + "/api/intro", {
+  const { VERCEL_URL } = process.env;
+  const data = await fetch(VERCEL_URL + "/api/intro", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
