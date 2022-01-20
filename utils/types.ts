@@ -10,3 +10,8 @@ export interface IMessage {
 export interface IAbout {
   description: string;
 }
+
+export interface IProps {
+  roles: IRole[];
+  about: IAbout;
+}
