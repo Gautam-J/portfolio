@@ -15,7 +15,8 @@ export interface IExperience {
   company: string;
   position: string;
   startDate: Date;
-  endDate?: Date | string;
+  endDate?: Date | null;
+  onGoing?: boolean;
 }
 
 export interface IProps {

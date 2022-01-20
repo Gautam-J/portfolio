@@ -25,7 +25,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<IMessage>) => {
       startDate = new Date(startDate);
 
       let { endDate } = req.body;
-      endDate = endDate ? new Date(endDate) : "present";
+      endDate = endDate ? new Date(endDate) : null;
+      const onGoing = !endDate;
 
       let duplicate = await collection.findOne({
         company,
@@ -42,6 +43,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<IMessage>) => {
         position,
         startDate,
         endDate,
+        onGoing,
       });
       return res.status(200).json({ msg: "success" });
     } catch (err: unknown) {

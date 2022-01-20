@@ -7,10 +7,32 @@ export const getExperienceData = async () => {
   const experience = await client
     .db("db_one")
     .collection("experience")
-    .find({})
-    .project({
-      _id: 0,
-    })
+    .aggregate([
+      {
+        $group: {
+          _id: "$company",
+          positions: { $push: "$position" },
+          minStartDate: { $min: "$startDate" },
+          maxStartDate: { $max: "$startDate" },
+          maxEndDate: { $max: "$endDate" },
+          onGoing: { $max: "$onGoing" },
+        },
+      },
+      {
+        $sort: {
+          onGoing: -1,
+          maxStartDate: -1,
+        },
+      },
+      {
+        $project: {
+          positions: { $reverseArray: "$positions" },
+          minStartDate: 1,
+          maxEndDate: 1,
+          onGoing: 1,
+        },
+      },
+    ])
     .toArray();
 
   return experience;

@@ -27,15 +27,16 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<IMessage>) => {
       let prevExperience = await collection.findOne({
         company,
         position,
-        endDate: "present",
+        endDate: null,
+        onGoing: true,
       });
       if (!prevExperience) {
         return res.status(400).json({ msg: "experience does not exist" });
       }
 
       await collection.updateOne(
-        { company, position },
-        { $set: { endDate: new Date(endDate) } }
+        { company, position, onGoing: true },
+        { $set: { endDate: new Date(endDate), onGoing: false } }
       );
       return res.status(200).json({ msg: "success" });
     } catch (err: unknown) {
