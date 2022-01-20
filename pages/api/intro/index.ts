@@ -15,7 +15,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
       return res.json(roles);
     } catch (err) {
-      res.status(500).json({ msg: err.message });
+      res.status(500).json({ msg: `${err.message}` });
     }
   } else {
     return res.status(405).json({ msg: "method not allowed" });
