@@ -11,7 +11,15 @@ export interface IAbout {
   description: string;
 }
 
+export interface IExperience {
+  company: string;
+  position: string;
+  startDate: Date;
+  endDate?: Date | string;
+}
+
 export interface IProps {
   roles: IRole[];
   about: IAbout;
+  experience: IExperience[];
 }
