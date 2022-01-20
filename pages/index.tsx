@@ -1,5 +1,6 @@
 import type { GetStaticProps, NextApiResponse, NextPage } from "next";
 import Intro from "../components/Intro";
+import About from "../components/About";
 import { IRole } from "../utils/types";
 import { getIntroData } from "./api/intro/index";
 
@@ -13,6 +14,7 @@ const Home: NextPage<Props> = (props) => {
   return (
     <div className="bg-light-base00 dark:bg-dark-base00">
       <Intro data={roles} />
+      <About />
     </div>
   );
 };
