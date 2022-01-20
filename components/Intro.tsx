@@ -1,8 +1,9 @@
 import { FunctionComponent } from "react";
+import { IRole } from "../utils/types";
 
-const Intro: FunctionComponent = () => {
-  const roles: string[] = ["Frontend", "Backend", "DevOps"];
-
+const Intro: FunctionComponent<{
+  data: IRole[];
+}> = ({ data }) => {
   return (
     // h-screen can be used
     <div className="introContainer">
@@ -25,9 +26,14 @@ const Intro: FunctionComponent = () => {
 
           {/* TODO: add typing carousel animation */}
           <div className="col-start-2 col-span-full">
-            <p className="pt-8 text-2xl font-semibold underline md:text-4xl text-light-base0D">
-              Role
-            </p>
+            {data.map((item) => (
+              <p
+                key={`${item._id}`}
+                className="pt-8 text-2xl font-semibold underline md:text-4xl text-light-base0D"
+              >
+                {item.role}
+              </p>
+            ))}
           </div>
         </div>
       </div>
