@@ -2,6 +2,8 @@ import type { GetStaticProps, NextApiResponse, NextPage } from "next";
 import Intro from "../components/Intro";
 import About from "../components/About";
 import Experience from "../components/Experience";
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 import { IProps, IRole, IAbout, IExperience } from "../utils/types";
 import { getIntroData } from "./api/intro/index";
 import { getAboutData } from "./api/about/index";
@@ -11,10 +13,12 @@ const Home: NextPage<IProps> = (props) => {
   const { roles, about, experience } = props;
 
   return (
-    <div className="bg-light-base00 dark:bg-dark-base00">
+    <div className="flex flex-col">
+      <NavBar />
       <Intro data={roles} />
-      <About data={about} />
-      <Experience data={experience} />
+      {/* <About data={about} />
+      <Experience data={experience} /> */}
+      <Footer />
     </div>
   );
 };

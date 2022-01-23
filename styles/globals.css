@@ -3,5 +3,17 @@
 @tailwind utilities;
 
 .introContainer {
-  height: calc(100vh - 70px);
+  height: calc(100vh - 52px);
+}
+
+.introContainerMobile {
+  height: calc(100vh - 48px);
+}
+
+.linux {
+  @apply text-5xl font-extrabold lg:text-8xl text-light-base0A/50 dark:text-dark-base0C/50;
+}
+
+.mainHeading {
+  @apply text-4xl font-bold lg:text-7xl text-light-base08 dark:text-dark-base08;
 }

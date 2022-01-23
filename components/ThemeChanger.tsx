@@ -16,7 +16,7 @@ const ThemeChanger: FunctionComponent = () => {
   };
 
   const className: string =
-    "w-7 h-7 text-light-base06 dark:text-dark-base0A transition duration-200 hover:scale-125";
+    "w-7 h-7 text-light-base05 dark:text-dark-base05 transition duration-200 hover:scale-125";
 
   return (
     <button onClick={changeTheme} className="outline-none">
