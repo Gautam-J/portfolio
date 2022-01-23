@@ -29,7 +29,7 @@ const Intro: FunctionComponent<{
             {data.map((item) => (
               <p
                 key={item._id}
-                className="pt-8 text-2xl font-semibold underline md:text-4xl text-light-base0D"
+                className="hidden pt-8 text-2xl font-semibold underline first:block md:text-4xl text-light-base0D"
               >
                 {item.role}
               </p>
