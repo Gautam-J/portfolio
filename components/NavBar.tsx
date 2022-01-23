@@ -9,7 +9,7 @@ export const NavItem: FunctionComponent<{
   setNavOpen: Function;
 }> = ({ name, setNavOpen }) => {
   return (
-    <div className="tracking-tighter transition duration-200 text-light-base09 dark:text-dark-base09 hover:text-light-base0F dark:hover:text-dark-base0F">
+    <div className="text-lg tracking-tighter transition duration-200 text-light-base09 dark:text-dark-base09 hover:text-light-base0F dark:hover:text-dark-base0F">
       <a href="" onClick={() => setNavOpen(false)}>
         {name}
       </a>
@@ -32,33 +32,34 @@ const NavBar: FunctionComponent = () => {
 
   return (
     <nav>
-      <div className="flex justify-between p-5 lg:px-28 lg:text-lg bg-light-base02 dark:bg-dark-base02">
+      <div className="grid items-center grid-cols-12 gap-5 pt-4">
         {/* Branding */}
-        <div>
-          <a href="#" className="flex items-center">
-            <span className="font-semibold lg:text-xl text-light-base06 dark:text-dark-base06 hover:text-light-base05 dark:hover:text-dark-base05">
-              Gautam J
-            </span>
+        <div className="col-span-2 col-start-2">
+          {/* TODO: add link to contact section */}
+          <a href="#">
+            <span className="text-3xl">Gautam J</span>
           </a>
         </div>
 
         {/* Navbar Items from large screen */}
-        <div className="items-center hidden space-x-4 lg:flex">
-          {items.map((item) => (
-            <NavItem name={item} setNavOpen={setNavOpen} key={item} />
-          ))}
-          <ThemeChanger />
+        <div className="hidden col-span-7 col-start-6 mr-10 lg:block">
+          <div className="flex items-center justify-center space-x-4">
+            {items.map((item) => (
+              <NavItem name={item} setNavOpen={setNavOpen} key={item} />
+            ))}
+            <ThemeChanger />
+          </div>
         </div>
 
         {/* Mobile menu hamburger button */}
         <div className="flex items-center lg:hidden">
           <button className="outline-none" onClick={() => setNavOpen(!navOpen)}>
-            <GiHamburgerMenu className="w-7 h-7 text-light-base06 dark:text-dark-base06" />
+            <GiHamburgerMenu className="w-7 h-7" />
           </button>
         </div>
       </div>
 
-      {/* Navbar Items from medium screen */}
+      {/* Mobile navbar items */}
       {navOpen && (
         <div className="fixed top-0 flex flex-col items-center justify-center w-full h-full space-y-3 text-3xl backdrop-blur-sm bg-light-base00/25 dark:bg-dark-base00/25">
           <div>

@@ -6,23 +6,13 @@ const Intro: FunctionComponent<{
 }> = ({ data }) => {
   return (
     // h-screen can be used
-    <div className="introContainer">
-      <div className="grid grid-cols-6">
-        <div className="col-start-2 pt-40 col-span-full ">
+    <div className="grid introContainer grid-cols12">
+      <div className="grid items-center grid-cols-6">
+        <div className="col-span-6 col-start-2">
           {/* Shown on medium screens and larger */}
           <h1 className="hidden font-extrabold md:block text-light-base0C dark:text-dark-base0C text-7xl">
             Hi, I&apos;m Gautam!
           </h1>
-
-          {/* Shown on smaller screens */}
-          <div className="md:hidden">
-            <h1 className="text-4xl font-extrabold text-light-base0C dark:text-dark-base0C">
-              Hi,
-            </h1>
-            <h1 className="text-4xl font-extrabold text-light-base0C dark:text-dark-base0C">
-              I&apos;m Gautam!
-            </h1>
-          </div>
 
           {/* TODO: add typing carousel animation */}
           <div className="col-start-2 col-span-full">
