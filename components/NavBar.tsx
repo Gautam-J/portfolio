@@ -9,7 +9,7 @@ export const NavItem: FunctionComponent<{
   setNavOpen: Function;
 }> = ({ name, setNavOpen }) => {
   return (
-    <div className="text-lg tracking-tighter transition duration-200 text-light-base09 dark:text-dark-base09 hover:text-light-base0F dark:hover:text-dark-base0F">
+    <div className="text-lg tracking-tighter transition duration-200">
       <a href="" onClick={() => setNavOpen(false)}>
         {name}
       </a>
