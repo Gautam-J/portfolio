@@ -62,12 +62,12 @@ const NavBar: FunctionComponent = () => {
       {/* Mobile navbar items */}
       {navOpen && (
         <div className="absolute top-0 z-50 flex flex-col items-center justify-center w-full h-full space-y-3 text-3xl backdrop-blur-sm bg-light-base00/25 dark:bg-dark-base00/25">
-          <div>
+          <button>
             <IoMdClose
               onClick={() => setNavOpen(false)}
               className="text-light-base05 dark:text-dark-base05"
             />
-          </div>
+          </button>
           {items.map((item) => (
             <NavItem name={item} setNavOpen={setNavOpen} key={item} />
           ))}

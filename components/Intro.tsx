@@ -2,6 +2,7 @@ import { FunctionComponent } from "react";
 import { BsArrowDown, BsFillArrowUpCircleFill } from "react-icons/bs";
 import { IRole } from "../utils/types";
 import { useTheme } from "next-themes";
+import Typewriter from "typewriter-effect";
 import homeLight from "../public/assets/homeLight.svg";
 import homeDark from "../public/assets/homeDark.svg";
 import Image from "next/image";
@@ -27,16 +28,15 @@ const Intro: FunctionComponent<{
         </div>
 
         {/* TODO: add typing carousel animation */}
-        <div>
-          {data.map((item) => (
-            <p
-              key={item._id}
-              className="hidden text-lg font-semibold underline lg:pt-8 lg:text-4xl first:block"
-            >
-              {item.role}
-            </p>
-          ))}
-        </div>
+        <p className="text-lg lg:pt-8 lg:text-4xl">
+          <Typewriter
+            options={{
+              strings: data.map((item) => item.role),
+              autoStart: true,
+              loop: true,
+            }}
+          />
+        </p>
       </div>
 
       <div className="justify-center col-start-1 col-span-full lg:absolute lg:col-start-9 lg:col-span-full">

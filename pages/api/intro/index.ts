@@ -8,6 +8,9 @@ export const getIntroData = async () => {
     .db("db_one")
     .collection("intro")
     .find({})
+    .project({
+      _id: 0,
+    })
     .toArray();
 
   return roles;
