@@ -37,7 +37,7 @@ const NavBar: FunctionComponent = () => {
         <div className="col-span-5 col-start-2 lg:col-span-2 lg:col-start-2">
           {/* TODO: add link to contact section */}
           <a href="#">
-            <span className="text-2xl lg:text-3xl">Gautam J</span>
+            <span className="text-2xl font-bold lg:text-3xl">Gautam J</span>
           </a>
         </div>
 
