@@ -5,3 +5,11 @@
 .introContainer {
   height: calc(100vh - 52px);
 }
+
+.linux {
+  @apply font-extrabold text-8xl;
+}
+
+.mainHeading {
+  @apply font-bold text-7xl;
+}
