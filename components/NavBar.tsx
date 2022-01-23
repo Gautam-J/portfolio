@@ -9,7 +9,7 @@ export const NavItem: FunctionComponent<{
   setNavOpen: Function;
 }> = ({ name, setNavOpen }) => {
   return (
-    <div className="text-lg tracking-tighter transition duration-200">
+    <div className="tracking-tighter transition duration-200 lg:text-lg">
       <a href="" onClick={() => setNavOpen(false)}>
         {name}
       </a>
@@ -32,17 +32,17 @@ const NavBar: FunctionComponent = () => {
 
   return (
     <nav>
-      <div className="grid items-center grid-cols-12 gap-5 pt-4">
+      <div className="grid items-center grid-cols-12 gap-1 pt-4 lg:gap-5">
         {/* Branding */}
-        <div className="col-span-2 col-start-2">
+        <div className="col-span-5 col-start-2 lg:col-span-2 lg:col-start-2">
           {/* TODO: add link to contact section */}
           <a href="#">
-            <span className="text-3xl">Gautam J</span>
+            <span className="text-2xl lg:text-3xl">Gautam J</span>
           </a>
         </div>
 
         {/* Navbar Items from large screen */}
-        <div className="hidden col-span-7 col-start-6 mr-10 lg:block">
+        <div className="hidden col-span-6 col-start-6 mr-10 lg:block">
           <div className="flex items-center justify-center space-x-4">
             {items.map((item) => (
               <NavItem name={item} setNavOpen={setNavOpen} key={item} />
@@ -52,20 +52,20 @@ const NavBar: FunctionComponent = () => {
         </div>
 
         {/* Mobile menu hamburger button */}
-        <div className="flex items-center lg:hidden">
-          <button className="outline-none" onClick={() => setNavOpen(!navOpen)}>
-            <GiHamburgerMenu className="w-7 h-7" />
+        <div className="absolute flex items-center right-8 lg:hidden">
+          <button className="" onClick={() => setNavOpen(!navOpen)}>
+            <GiHamburgerMenu className="w-7 h-7 text-light-base05 dark:text-dark-base05" />
           </button>
         </div>
       </div>
 
       {/* Mobile navbar items */}
       {navOpen && (
-        <div className="fixed top-0 flex flex-col items-center justify-center w-full h-full space-y-3 text-3xl backdrop-blur-sm bg-light-base00/25 dark:bg-dark-base00/25">
+        <div className="absolute top-0 z-50 flex flex-col items-center justify-center w-full h-full space-y-3 text-3xl backdrop-blur-sm bg-light-base00/25 dark:bg-dark-base00/25">
           <div>
             <IoMdClose
               onClick={() => setNavOpen(false)}
-              className="text-light-base06 dark:text-dark-base06"
+              className="text-light-base05 dark:text-dark-base05"
             />
           </div>
           {items.map((item) => (
