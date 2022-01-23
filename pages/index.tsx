@@ -13,7 +13,7 @@ const Home: NextPage<IProps> = (props) => {
   const { roles, about, experience } = props;
 
   return (
-    <div className="flex flex-col bg-light-base00 dark:bg-dark-base00">
+    <div className="flex flex-col">
       <NavBar />
       <Intro data={roles} />
       {/* <About data={about} />

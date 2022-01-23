@@ -13,8 +13,7 @@ const Intro: FunctionComponent<{
   const { theme } = useTheme();
 
   return (
-    // h-screen can be used
-    <div className="relative grid items-center grid-cols-12 introContainer">
+    <div className="relative grid items-center grid-cols-12 introContainerMobile lg:introContainer">
       <h1 className="col-start-5 mt-12 col-span-full lg:col-span-8 lg:col-start-2 linux">
         $ home
       </h1>
@@ -27,8 +26,7 @@ const Intro: FunctionComponent<{
           <h1 className="">I&apos;m Gautam!</h1>
         </div>
 
-        {/* TODO: add typing carousel animation */}
-        <p className="text-lg lg:pt-8 lg:text-4xl">
+        <p className="text-md lg:pt-8 lg:text-4xl text-light-base0D dark:text-dark-base0D">
           <Typewriter
             options={{
               strings: data.map((item) => item.role),
@@ -48,11 +46,12 @@ const Intro: FunctionComponent<{
       </div>
 
       <div className="flex items-center justify-center col-start-1 col-span-full">
-        <BsArrowDown className="text-5xl lg:text-7xl" />
+        <BsArrowDown className="text-5xl lg:text-7xl text-light-base05 dark:text-dark-base05" />
       </div>
 
+      {/* TODO: Implement scroll to top */}
       <a href="">
-        <BsFillArrowUpCircleFill className="fixed text-5xl lg:bottom-14 lg:right-14 bottom-8 right-8" />
+        <BsFillArrowUpCircleFill className="fixed text-5xl text-light-base05 dark:text-dark-base05 lg:bottom-14 lg:right-14 bottom-8 right-8" />
       </a>
     </div>
   );

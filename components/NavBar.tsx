@@ -6,11 +6,13 @@ import { useState } from "react";
 
 export const NavItem: FunctionComponent<{
   name: string;
-  setNavOpen: Function;
+  setNavOpen: null | Function;
 }> = ({ name, setNavOpen }) => {
   return (
-    <div className="tracking-tighter transition duration-200 lg:text-lg">
-      <a href="" onClick={() => setNavOpen(false)}>
+    // TODO: Add hover animation
+    // TODO: Add links
+    <div className="font-bold tracking-tighter lg:font-normal lg:text-lg text-light-base08 dark:text-dark-base08">
+      <a href="" onClick={() => (setNavOpen ? setNavOpen(false) : {})}>
         {name}
       </a>
     </div>
@@ -31,13 +33,15 @@ const NavBar: FunctionComponent = () => {
   const [navOpen, setNavOpen] = useState(false);
 
   return (
-    <nav>
+    <nav className="bg-light-base00 dark:bg-dark-base00">
       <div className="grid items-center grid-cols-12 gap-1 pt-4 lg:gap-5">
         {/* Branding */}
         <div className="col-span-5 col-start-2 lg:col-span-2 lg:col-start-2">
           {/* TODO: add link to contact section */}
           <a href="#">
-            <span className="text-2xl font-bold lg:text-3xl">Gautam J</span>
+            <span className="text-2xl font-bold lg:text-3xl text-light-base09 dark:text-dark-base09">
+              Gautam J
+            </span>
           </a>
         </div>
 
@@ -45,7 +49,7 @@ const NavBar: FunctionComponent = () => {
         <div className="hidden col-span-6 col-start-6 mr-10 lg:block">
           <div className="flex items-center justify-center space-x-4">
             {items.map((item) => (
-              <NavItem name={item} setNavOpen={setNavOpen} key={item} />
+              <NavItem name={item} setNavOpen={null} key={item} />
             ))}
             <ThemeChanger />
           </div>
@@ -61,7 +65,7 @@ const NavBar: FunctionComponent = () => {
 
       {/* Mobile navbar items */}
       {navOpen && (
-        <div className="absolute top-0 z-50 flex flex-col items-center justify-center w-full h-full space-y-3 text-3xl backdrop-blur-sm bg-light-base00/25 dark:bg-dark-base00/25">
+        <div className="absolute top-0 z-50 flex flex-col items-center justify-center w-full h-full space-y-3 text-3xl backdrop-blur-sm bg-light-base00/50 dark:bg-dark-base00/50">
           <button>
             <IoMdClose
               onClick={() => setNavOpen(false)}
