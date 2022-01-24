@@ -18,8 +18,24 @@ export interface IExperience {
   positions: string[];
 }
 
+export interface IDegree {
+  institution: string;
+  degree: string;
+  startDate: Date;
+  endDate: Date;
+}
+
+export interface ICertification {
+  name: string;
+  organization: string;
+  issueDate: Date;
+  credential: string;
+}
+
 export interface IProps {
   roles: IRole[];
   about: IAbout;
   experience: IExperience[];
+  degrees: IDegree[];
+  certifications: ICertification[];
 }

@@ -3,14 +3,24 @@ import Intro from "../components/Intro";
 import About from "../components/About";
 import Experience from "../components/Experience";
 import NavBar from "../components/NavBar";
+import Education from "../components/Education";
 import Footer from "../components/Footer";
-import { IProps, IRole, IAbout, IExperience } from "../utils/types";
 import { getIntroData } from "./api/intro/index";
 import { getAboutData } from "./api/about/index";
 import { getExperienceData } from "./api/experience";
+import { getDegreeData } from "./api/education/degree";
+import { getCertificationData } from "./api/education/certification";
+import {
+  IProps,
+  IRole,
+  IAbout,
+  IExperience,
+  IDegree,
+  ICertification,
+} from "../utils/types";
 
 const Home: NextPage<IProps> = (props) => {
-  const { roles, about, experience } = props;
+  const { roles, about, experience, degrees, certifications } = props;
 
   return (
     <div className="flex flex-col">
@@ -18,6 +28,7 @@ const Home: NextPage<IProps> = (props) => {
       <Intro data={roles} />
       <About data={about} />
       <Experience data={experience} />
+      <Education data={{ degrees, certifications }} />
       {/* <Footer /> */}
     </div>
   );
@@ -33,7 +44,15 @@ export const getStaticProps: GetStaticProps = async () => {
   const experienceData = await getExperienceData();
   const experience: IExperience[] = JSON.parse(JSON.stringify(experienceData));
 
-  return { props: { roles, about, experience } };
+  const degreeData = await getDegreeData();
+  const degrees: IDegree[] = JSON.parse(JSON.stringify(degreeData));
+
+  const certificationData = await getCertificationData();
+  const certifications: ICertification[] = JSON.parse(
+    JSON.stringify(certificationData)
+  );
+
+  return { props: { roles, about, experience, degrees, certifications } };
 };
 
 export default Home;
