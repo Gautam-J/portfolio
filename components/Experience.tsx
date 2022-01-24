@@ -14,20 +14,25 @@ const Experience: FunctionComponent<{
 
   return (
     <div className="relative grid items-center justify-center h-screen grid-cols-12 bg-gradient-to-b from-light-base00 to-light-base01 dark:from-dark-base00 dark:to-dark-base01">
-      <div className="absolute col-span-4 col-start-1 top-1/4">
+      <div className="absolute col-span-7 col-start-1 lg:col-span-4 lg:col-start-1 lg:top-1/4 top-1/2">
         <Image
           src={theme === "light" ? experienceLight : experienceDark}
           alt="Experience Graphic"
         />
       </div>
       <h1 className="col-start-2 mt-5 col-span-full linux">$ history</h1>
-      <h1 className="col-start-7 col-span-full mainHeading">Experience</h1>
+      <div className="flex justify-center col-start-1 col-span-full lg:flex-none lg:col-start-7 lg:col-span-full">
+        <h1 className="mainHeading">Experience</h1>
+      </div>
 
-      <div className="z-10 col-start-2 col-end-12">
-        <div className="flex flex-wrap items-start justify-center">
+      <div className="z-10 col-start-1 lg:col-start-2 lg:col-end-12 col-span-full">
+        <div className="grid items-start justify-start grid-cols-12 lg:justify-center lg:flex lg:flex-wrap">
           {data.map((exp) => (
-            <div key={exp._id} className="mx-16 my-8">
-              <h3 className="text-2xl font-bold text-light-base0D dark:text-dark-base0D">
+            <div
+              key={exp._id}
+              className="my-4 lg:my-8 lg:mx-16 odd:col-start-2 odd:col-span-full even:col-end-12 even:col-start-4"
+            >
+              <h3 className="text-xl font-bold lg:text-2xl text-light-base0D dark:text-dark-base0D">
                 {exp._id}
               </h3>
               <p className="text-light-base09 dark:text-dark-base09">
@@ -43,15 +48,15 @@ const Experience: FunctionComponent<{
                       month: "short",
                     })}
               </p>
-              <div className="mt-4">
+              <div className="mt-2 lg:mt-4">
                 {exp.positions.map((pos) => (
                   <>
                     <div
                       key={pos}
-                      className="flex items-center justify-start mt-1"
+                      className="flex items-center justify-start lg:mt-1"
                     >
-                      <GoPrimitiveDot className="mr-4 text-light-base05 dark:text-dark-base05" />
-                      <p className="text-xl">{pos}</p>
+                      <GoPrimitiveDot className="mr-2 lg:mr-4 text-light-base05 dark:text-dark-base05" />
+                      <p className="text-lg lg:text-xl">{pos}</p>
                     </div>
                     <div className="last:hidden">
                       <BsArrowUp className="my-1 mr-4 scale-150 text-light-base05 dark:text-dark-base05" />
