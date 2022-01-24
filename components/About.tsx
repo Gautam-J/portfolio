@@ -15,7 +15,7 @@ const About: FunctionComponent<{
   const { theme } = useTheme();
 
   return (
-    <div className="grid items-center h-screen grid-cols-12 bg-gradient-to-b from-light-base01 to-light-base00 dark:from-dark-base01 dark:to-dark-base00">
+    <div className="grid items-center min-h-screen grid-cols-12 h-max bg-gradient-to-b from-light-base01 to-light-base00 dark:from-dark-base01 dark:to-dark-base00">
       <h1 className="col-start-4 lg:mt-10 col-span-full lg:col-start-7 linux lg:col-span-full">
         $ whoami
       </h1>

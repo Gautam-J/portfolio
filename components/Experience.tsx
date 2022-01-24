@@ -13,7 +13,7 @@ const Experience: FunctionComponent<{
   const { theme } = useTheme();
 
   return (
-    <div className="relative grid items-center justify-center h-screen grid-cols-12 bg-gradient-to-b from-light-base00 to-light-base01 dark:from-dark-base00 dark:to-dark-base01">
+    <div className="relative grid items-center justify-center min-h-screen grid-cols-12 h-max bg-gradient-to-b from-light-base00 to-light-base01 dark:from-dark-base00 dark:to-dark-base01">
       <div className="absolute col-span-7 col-start-1 lg:col-span-4 lg:col-start-1 lg:top-1/4 top-1/2">
         <Image
           src={theme === "light" ? experienceLight : experienceDark}
