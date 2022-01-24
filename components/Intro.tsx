@@ -56,6 +56,7 @@ const Intro: FunctionComponent<{
         <BsArrowDown className="text-5xl lg:text-7xl text-light-base05 dark:text-dark-base05" />
       </div>
 
+      {/* TODO: add hover and on click animation */}
       <button
         className="fixed z-40 text-5xl border-none outline-none cursor-pointer lg:bottom-14 lg:right-14 bottom-8 right-8"
         onClick={scrollToTop}

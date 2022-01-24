@@ -16,9 +16,9 @@ const Home: NextPage<IProps> = (props) => {
     <div className="flex flex-col">
       <NavBar />
       <Intro data={roles} />
-      {/* <About data={about} />
-      <Experience data={experience} /> */}
-      <Footer />
+      <About data={about} />
+      {/* <Experience data={experience} /> */}
+      {/* <Footer /> */}
     </div>
   );
 };
