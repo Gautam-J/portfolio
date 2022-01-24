@@ -12,6 +12,13 @@ const Intro: FunctionComponent<{
 }> = ({ data }) => {
   const { theme } = useTheme();
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="relative grid items-center grid-cols-12 introContainerMobile lg:introContainer">
       <h1 className="col-start-5 mt-12 col-span-full lg:col-span-8 lg:col-start-2 linux">
@@ -49,10 +56,12 @@ const Intro: FunctionComponent<{
         <BsArrowDown className="text-5xl lg:text-7xl text-light-base05 dark:text-dark-base05" />
       </div>
 
-      {/* TODO: Implement scroll to top */}
-      <a href="">
-        <BsFillArrowUpCircleFill className="fixed text-5xl text-light-base05 dark:text-dark-base05 lg:bottom-14 lg:right-14 bottom-8 right-8" />
-      </a>
+      <button
+        className="fixed z-40 text-5xl border-none outline-none cursor-pointer lg:bottom-14 lg:right-14 bottom-8 right-8"
+        onClick={scrollToTop}
+      >
+        <BsFillArrowUpCircleFill className="text-light-base05 dark:text-dark-base05" />
+      </button>
     </div>
   );
 };
