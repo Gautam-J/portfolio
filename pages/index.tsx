@@ -17,7 +17,7 @@ const Home: NextPage<IProps> = (props) => {
       <NavBar />
       <Intro data={roles} />
       <About data={about} />
-      {/* <Experience data={experience} /> */}
+      <Experience data={experience} />
       {/* <Footer /> */}
     </div>
   );
