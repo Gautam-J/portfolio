@@ -4,6 +4,7 @@ import About from "../components/About";
 import Experience from "../components/Experience";
 import NavBar from "../components/NavBar";
 import Education from "../components/Education";
+import Technology from "../components/Technology";
 import Footer from "../components/Footer";
 import { getIntroData } from "./api/intro/index";
 import { getAboutData } from "./api/about/index";
@@ -29,6 +30,7 @@ const Home: NextPage<IProps> = (props) => {
       <About data={about} />
       <Experience data={experience} />
       <Education data={{ degrees, certifications }} />
+      <Technology />
       {/* <Footer /> */}
     </div>
   );

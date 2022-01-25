@@ -22,6 +22,7 @@ const uploadS3 = async (bucket: string, fileName: string, body: Buffer) => {
         Key: fileName,
         Body: body,
         ACL: "public-read",
+        ContentType: "image/svg+xml",
       },
       (err, data) => {
         if (err) reject(err);
