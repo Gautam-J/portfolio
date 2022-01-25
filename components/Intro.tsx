@@ -25,7 +25,7 @@ const Intro: FunctionComponent<{
         $ home
       </h1>
 
-      <div className="col-start-2 lg:mb-24 col-span-full lg:col-span-6 lg:col-start-3">
+      <div className="col-start-2 lg:mb-24 col-span-full lg:col-span-7 lg:col-start-3">
         <h1 className="hidden lg:block mainHeading">Hi, I&apos;m Gautam!</h1>
 
         <div className="mainHeading lg:hidden">
