@@ -33,7 +33,7 @@ const NavBar: FunctionComponent = () => {
   const [navOpen, setNavOpen] = useState(false);
 
   return (
-    <nav className="bg-light-base00 dark:bg-dark-base00">
+    <nav className="bg-gradient-to-b from-light-base01 to-light-base00 dark:from-dark-base01 dark:to-dark-base00">
       <div className="grid items-center grid-cols-12 gap-1 pt-4 lg:gap-5">
         {/* Branding */}
         <div className="col-span-5 col-start-2 lg:col-span-2 lg:col-start-2">

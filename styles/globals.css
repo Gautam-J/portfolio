@@ -7,7 +7,8 @@
 }
 
 .introContainerMobile {
-  height: calc(100vh - 48px);
+  height: max-content;
+  min-height: calc(100vh - 48px);
 }
 
 .linux {

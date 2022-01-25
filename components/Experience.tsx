@@ -13,20 +13,22 @@ const Experience: FunctionComponent<{
   const { theme } = useTheme();
 
   return (
-    <div className="relative grid items-center justify-center h-screen grid-cols-12 bg-gradient-to-b from-light-base00 to-light-base01 dark:from-dark-base00 dark:to-dark-base01">
-      <div className="absolute col-span-7 col-start-1 lg:col-span-4 lg:col-start-1 lg:top-1/4 top-1/2">
+    <div className="relative grid items-center justify-center min-h-screen grid-cols-12 h-max bg-gradient-to-b from-light-base00 to-light-base01 dark:from-dark-base00 dark:to-dark-base01">
+      <div className="absolute hidden col-span-4 col-start-1 lg:block top-10">
         <Image
           src={theme === "light" ? experienceLight : experienceDark}
           alt="Experience Graphic"
+          width="400px"
+          height="400px"
         />
       </div>
       <h1 className="col-start-2 mt-5 col-span-full linux">$ history</h1>
       <div className="flex justify-center col-start-1 col-span-full lg:flex-none lg:col-start-7 lg:col-span-full">
-        <h1 className="mainHeading">Experience</h1>
+        <h1 className="mt-10 mb-4 mainHeading md:mt-0 md:mb-0">Experience</h1>
       </div>
 
       <div className="z-10 col-start-1 lg:col-start-2 lg:col-end-12 col-span-full">
-        <div className="grid items-start justify-start grid-cols-12 lg:justify-center lg:flex lg:flex-wrap">
+        <div className="grid items-start justify-start grid-cols-12 lg:justify-evenly lg:flex lg:flex-wrap">
           {data.map((exp) => (
             <div
               key={exp._id}
@@ -50,22 +52,27 @@ const Experience: FunctionComponent<{
               </p>
               <div className="mt-2 lg:mt-4">
                 {exp.positions.map((pos) => (
-                  <>
-                    <div
-                      key={pos}
-                      className="flex items-center justify-start lg:mt-1"
-                    >
+                  <div key={pos}>
+                    <div className="flex items-center justify-start lg:mt-1">
                       <GoPrimitiveDot className="mr-2 lg:mr-4 text-light-base05 dark:text-dark-base05" />
                       <p className="text-lg lg:text-xl">{pos}</p>
                     </div>
                     <div className="last:hidden">
                       <BsArrowUp className="my-1 mr-4 scale-150 text-light-base05 dark:text-dark-base05" />
                     </div>
-                  </>
+                  </div>
                 ))}
               </div>
             </div>
           ))}
+        </div>
+        <div className="flex items-center justify-center md:hidden">
+          <Image
+            src={theme === "light" ? experienceLight : experienceDark}
+            alt="Experience Graphic"
+            width="200px"
+            height="200px"
+          />
         </div>
       </div>
     </div>
