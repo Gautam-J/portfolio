@@ -52,18 +52,15 @@ const Experience: FunctionComponent<{
               </p>
               <div className="mt-2 lg:mt-4">
                 {exp.positions.map((pos) => (
-                  <>
-                    <div
-                      key={pos}
-                      className="flex items-center justify-start lg:mt-1"
-                    >
+                  <div key={pos}>
+                    <div className="flex items-center justify-start lg:mt-1">
                       <GoPrimitiveDot className="mr-2 lg:mr-4 text-light-base05 dark:text-dark-base05" />
                       <p className="text-lg lg:text-xl">{pos}</p>
                     </div>
                     <div className="last:hidden">
                       <BsArrowUp className="my-1 mr-4 scale-150 text-light-base05 dark:text-dark-base05" />
                     </div>
-                  </>
+                  </div>
                 ))}
               </div>
             </div>
