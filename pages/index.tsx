@@ -6,6 +6,7 @@ import NavBar from "../components/NavBar";
 import Education from "../components/Education";
 import Technology from "../components/Technology";
 import Project from "../components/Project";
+import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import { getIntroData } from "./api/intro";
 import { getAboutData } from "./api/about";
@@ -45,7 +46,8 @@ const Home: NextPage<IProps> = (props) => {
       <Education data={{ degrees, certifications }} />
       <Technology data={technologies} />
       <Project data={projects} />
-      {/* <Footer /> */}
+      <Contact />
+      <Footer />
     </div>
   );
 };
