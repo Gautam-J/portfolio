@@ -37,6 +37,13 @@ export interface ITechnology {
   technologies: string[];
 }
 
+export interface IProject {
+  title: string;
+  date: Date;
+  link: string;
+  imageURL: string;
+}
+
 export interface IProps {
   roles: IRole[];
   about: IAbout;
@@ -44,4 +51,5 @@ export interface IProps {
   degrees: IDegree[];
   certifications: ICertification[];
   technologies: ITechnology[];
+  projects: IProject[];
 }
