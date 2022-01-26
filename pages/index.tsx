@@ -11,6 +11,7 @@ import { getAboutData } from "./api/about/index";
 import { getExperienceData } from "./api/experience";
 import { getDegreeData } from "./api/education/degree";
 import { getCertificationData } from "./api/education/certification";
+import { getTechData } from "./api/technology";
 import {
   IProps,
   IRole,
@@ -18,10 +19,12 @@ import {
   IExperience,
   IDegree,
   ICertification,
+  ITechnology,
 } from "../utils/types";
 
 const Home: NextPage<IProps> = (props) => {
-  const { roles, about, experience, degrees, certifications } = props;
+  const { roles, about, experience, degrees, certifications, technologies } =
+    props;
 
   return (
     <div className="flex flex-col">
@@ -30,7 +33,7 @@ const Home: NextPage<IProps> = (props) => {
       <About data={about} />
       <Experience data={experience} />
       <Education data={{ degrees, certifications }} />
-      <Technology />
+      <Technology data={technologies} />
       {/* <Footer /> */}
     </div>
   );
@@ -54,7 +57,14 @@ export const getStaticProps: GetStaticProps = async () => {
     JSON.stringify(certificationData)
   );
 
-  return { props: { roles, about, experience, degrees, certifications } };
+  const technologyData = await getTechData();
+  const technologies: ITechnology[] = JSON.parse(
+    JSON.stringify(technologyData)
+  );
+
+  return {
+    props: { roles, about, experience, degrees, certifications, technologies },
+  };
 };
 
 export default Home;
