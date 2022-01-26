@@ -14,6 +14,20 @@ export const getTechData = async () => {
           technologies: { $addToSet: "$name" },
         },
       },
+      {
+        $unwind: "$technologies",
+      },
+      {
+        $sort: {
+          technologies: 1,
+        },
+      },
+      {
+        $group: {
+          _id: "$_id",
+          technologies: { $push: "$technologies" },
+        },
+      },
     ])
     .toArray();
 
