@@ -11,6 +11,11 @@
   min-height: calc(100vh - 48px);
 }
 
+.contactContainer {
+  height: calc(100vh - 56px);
+  min-width: calc(100vh - 56px);
+}
+
 .linux {
   @apply text-5xl font-extrabold lg:text-8xl text-light-base0A/50 dark:text-dark-base0C/50;
 }
