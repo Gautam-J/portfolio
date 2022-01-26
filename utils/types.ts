@@ -32,10 +32,16 @@ export interface ICertification {
   credential: string;
 }
 
+export interface ITechnology {
+  _id: "language" | "framework" | "others";
+  technologies: string[];
+}
+
 export interface IProps {
   roles: IRole[];
   about: IAbout;
   experience: IExperience[];
   degrees: IDegree[];
   certifications: ICertification[];
+  technologies: ITechnology[];
 }
