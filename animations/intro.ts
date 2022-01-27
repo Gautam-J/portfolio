@@ -1,3 +1,5 @@
+const rev: "reverse" = "reverse";
+
 export const upDownInfinite = {
   initial: {
     y: -40,
@@ -8,7 +10,7 @@ export const upDownInfinite = {
     opacity: 1,
     transition: {
       repeat: Infinity,
-      repeatType: "reverse",
+      repeatType: rev,
       duration: 1.5,
       delay: 2,
     },
@@ -73,7 +75,7 @@ export const linux = {
     transition: {
       duration: 2,
       repeat: Infinity,
-      repeatType: "reverse",
+      repeatType: rev,
     },
   },
 };
