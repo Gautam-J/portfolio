@@ -4,7 +4,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 import { useState } from "react";
 
-export const NavItem: FunctionComponent<{
+const NavItem: FunctionComponent<{
   name: string;
   setNavOpen: null | Function;
 }> = ({ name, setNavOpen }) => {

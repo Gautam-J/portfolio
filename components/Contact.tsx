@@ -8,7 +8,7 @@ import contactLight from "../public/assets/contactLight.svg";
 import contactDark from "../public/assets/contactDark.svg";
 import { useTheme } from "next-themes";
 
-export const Contact: FunctionComponent = () => {
+const Contact: FunctionComponent = () => {
   const { theme } = useTheme();
   return (
     <div

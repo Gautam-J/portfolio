@@ -5,7 +5,7 @@ import { useTheme } from "next-themes";
 import projectLight from "../public/assets/projectLight.svg";
 import projectDark from "../public/assets/projectDark.svg";
 
-export const Project: FunctionComponent<{ data: IProject[] }> = ({ data }) => {
+const Project: FunctionComponent<{ data: IProject[] }> = ({ data }) => {
   if (!process.env.S3_BUCKET_NAME) {
     throw Error("S3_BUCKET_NAME is not in enviroment variables");
   }
