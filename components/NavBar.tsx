@@ -4,7 +4,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { navBar, mobileNavBar } from "../utils/animations";
+import { navBar, mobileNavBar } from "../animations/navbar";
 
 const NavItem: FunctionComponent<{
   name: string;
