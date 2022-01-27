@@ -132,6 +132,7 @@ const Technology: FunctionComponent<{ data: ITechnology[] }> = ({ data }) => {
       <div className="col-start-2 col-end-12 mb-6 lg:col-start-2 lg:col-end-10">
         <div className="flex flex-col items-start justify-center lg:mb-8">
           <motion.h3
+            // TODO: Fix in mobile view
             variants={leftToRight}
             initial="initial"
             whileInView="animate"
