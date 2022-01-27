@@ -6,6 +6,8 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import experienceLight from "../public/assets/experienceLight.svg";
 import experienceDark from "../public/assets/experienceDark.svg";
+import { motion } from "framer-motion";
+import { linux, leftToRight, graphic } from "../animations/intro";
 
 const Experience: FunctionComponent<{
   data: IExperience[];
@@ -17,23 +19,48 @@ const Experience: FunctionComponent<{
       id="Experience"
       className="relative grid items-center justify-center min-h-screen grid-cols-12 h-max bg-gradient-to-b from-light-base00 to-light-base01 dark:from-dark-base00 dark:to-dark-base01"
     >
-      <div className="absolute hidden col-span-4 col-start-1 lg:block top-10">
+      <motion.div
+        variants={graphic}
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true }}
+        className="absolute hidden col-span-4 col-start-1 lg:block top-10"
+      >
         <Image
           src={theme === "light" ? experienceLight : experienceDark}
           alt="Experience Graphic"
           width="400px"
           height="400px"
         />
-      </div>
-      <h1 className="col-start-2 mt-5 col-span-full linux">$ history</h1>
+      </motion.div>
+      <motion.h1
+        variants={linux}
+        initial="initial"
+        whileInView="animate"
+        className="col-start-2 mt-5 col-span-full linux"
+      >
+        $ history
+      </motion.h1>
       <div className="flex justify-center col-start-1 col-span-full lg:flex-none lg:col-start-7 lg:col-span-full">
-        <h1 className="mt-10 mb-4 mainHeading md:mt-0 md:mb-0">Experience</h1>
+        <motion.h1
+          variants={leftToRight}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+          className="mt-10 mb-4 mainHeading md:mt-0 md:mb-0"
+        >
+          Experience
+        </motion.h1>
       </div>
 
       <div className="z-10 col-start-1 lg:col-start-2 lg:col-end-12 col-span-full">
         <div className="grid items-start justify-start grid-cols-12 lg:justify-evenly lg:flex lg:flex-wrap">
           {data.map((exp) => (
-            <div
+            <motion.div
+              variants={leftToRight}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
               key={exp._id}
               className="my-4 lg:my-8 lg:mx-16 odd:col-start-2 odd:col-span-full even:col-end-12 even:col-start-4"
             >
@@ -68,17 +95,23 @@ const Experience: FunctionComponent<{
                   </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-        <div className="flex items-center justify-center md:hidden">
+        <motion.div
+          variants={graphic}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+          className="flex items-center justify-center md:hidden"
+        >
           <Image
             src={theme === "light" ? experienceLight : experienceDark}
             alt="Experience Graphic"
             width="200px"
             height="200px"
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

@@ -19,7 +19,11 @@ const ThemeChanger: FunctionComponent = () => {
     "w-7 h-7 text-light-base05 dark:text-dark-base05 transition duration-200 hover:scale-125";
 
   return (
-    <button onClick={changeTheme} className="outline-none">
+    <button
+      aria-label="Change theme"
+      onClick={changeTheme}
+      className="outline-none"
+    >
       {/* TODO: add hover text - $ sudo dark / light  */}
       {theme === "light" ? (
         <MdOutlineDarkMode className={className} />

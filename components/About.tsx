@@ -8,6 +8,8 @@ import guitarLight from "../public/assets/guitarLight.svg";
 import guitarDark from "../public/assets/guitarDark.svg";
 import basketballLight from "../public/assets/basketballLight.svg";
 import basketballDark from "../public/assets/basketballDark.svg";
+import { motion } from "framer-motion";
+import { linux, leftToRight, graphic } from "../animations/intro";
 
 const About: FunctionComponent<{
   data: IAbout;
@@ -19,16 +21,35 @@ const About: FunctionComponent<{
       id="About"
       className="grid items-center min-h-screen grid-cols-12 h-max bg-gradient-to-b from-light-base01 to-light-base00 dark:from-dark-base01 dark:to-dark-base00"
     >
-      <h1 className="col-start-4 lg:mt-10 col-span-full lg:col-start-7 linux lg:col-span-full">
+      <motion.h1
+        variants={linux}
+        initial="initial"
+        whileInView="animate"
+        className="col-start-4 lg:mt-10 col-span-full lg:col-start-7 linux lg:col-span-full"
+      >
         $ whoami
-      </h1>
+      </motion.h1>
       <div className="col-span-10 col-start-2 lg:col-span-8 lg:col-start-3">
-        <h1 className="mainHeading">About Me</h1>
+        <motion.h1
+          variants={leftToRight}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+          className="mainHeading"
+        >
+          About Me
+        </motion.h1>
         <p className="mt-2 lg:mt-4 lg:text-lg">{data.description}</p>
       </div>
 
       <div className="justify-center col-start-2 col-end-12">
-        <div className="items-center justify-center hidden lg:flex gap-x-20">
+        <motion.div
+          variants={graphic}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+          className="items-center justify-center hidden lg:flex gap-x-20"
+        >
           <Image
             src={theme === "light" ? developerLight : developerDark}
             alt="Developer Graphic"
@@ -50,7 +71,7 @@ const About: FunctionComponent<{
             height="300px"
             width="300px"
           />
-        </div>
+        </motion.div>
 
         <div className="flex items-center justify-center lg:hidden">
           <Image
@@ -69,7 +90,13 @@ const About: FunctionComponent<{
           />
         </div>
 
-        <div className="flex items-center justify-center lg:hidden">
+        <motion.div
+          variants={graphic}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+          className="flex items-center justify-center lg:hidden"
+        >
           <Image
             src={theme === "light" ? guitarLight : guitarDark}
             alt="Guitar Graphic"
@@ -77,7 +104,7 @@ const About: FunctionComponent<{
             height="150px"
             width="150px"
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

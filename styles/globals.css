@@ -27,7 +27,7 @@ html {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  @apply bg-gradient-to-b from-light-base0D/70 to-light-base0C/70 dark:from-dark-base0D/70 dark:to-dark-base0C/70;
+  @apply bg-gradient-to-b from-light-base01 to-light-base00 dark:from-dark-base01 dark:to-dark-base01;
 }
 
 /* Handle */

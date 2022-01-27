@@ -7,6 +7,8 @@ import twitter from "../public/assets/twitter.svg";
 import contactLight from "../public/assets/contactLight.svg";
 import contactDark from "../public/assets/contactDark.svg";
 import { useTheme } from "next-themes";
+import { motion } from "framer-motion";
+import { linux, leftToRight, graphic } from "../animations/intro";
 
 const Contact: FunctionComponent = () => {
   const { theme } = useTheme();
@@ -15,46 +17,85 @@ const Contact: FunctionComponent = () => {
       id="Connect"
       className="relative grid grid-cols-12 contactContainer bg-gradient-to-b from-light-base00 to-light-base01 dark:from-dark-base00 dark:to-dark-base01"
     >
-      <h1 className="z-10 col-start-5 lg:col-start-8 mt-14 linux col-span-full lg:col-span-full">
+      <motion.h1
+        variants={linux}
+        initial="initial"
+        whileInView="animate"
+        className="z-10 col-start-5 lg:col-start-8 mt-14 linux col-span-full lg:col-span-full"
+      >
         $ ping
-      </h1>
-      <div className="absolute right-0 col-start-1 top-24 lg:hidden col-span-full">
+      </motion.h1>
+      <motion.div
+        variants={graphic}
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true }}
+        className="absolute right-0 col-start-1 top-24 lg:hidden col-span-full"
+      >
         <Image
           src={theme === "light" ? contactLight : contactDark}
           alt="Contact Graphic"
           width={200}
           height={200}
         />
-      </div>
+      </motion.div>
       <div className="z-10 flex items-center justify-center col-start-2 col-end-12 lg:justify-start lg:flex-none">
-        <h1 className="mb-4 mainHeading">Connect</h1>
+        <motion.h1
+          variants={leftToRight}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+          className="mb-4 mainHeading"
+        >
+          Connect
+        </motion.h1>
       </div>
       <div className="z-10 col-start-2 lg:col-start-3 col-span-full lg:col-span-full">
-        <h2 className="mb-2 text-3xl font-bold lg:text-4xl text-light-base0D dark:text-dark-base0D">
+        <motion.h2
+          variants={leftToRight}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+          className="mb-2 text-3xl font-bold lg:text-4xl text-light-base0D dark:text-dark-base0D"
+        >
           Gautam J
-        </h2>
-        <a
+        </motion.h2>
+        <motion.a
+          variants={leftToRight}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
           href="mailto:gautam.jayapal@gmail.com"
           className="text-lg underline text-light-base0C dark:text-dark-base0C hover:text-light-base0C/75 hover:dark:text-dark-base0C/75"
           rel="noopener noreferrer"
           target="_blank"
         >
           gautam.jayapal@gmail.com
-        </a>
+        </motion.a>
       </div>
 
-      <div className="absolute right-0 hidden col-start-1 lg:block col-span-full top-1/4">
+      <motion.div
+        variants={graphic}
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true }}
+        className="absolute right-0 hidden col-start-1 lg:block col-span-full top-1/4"
+      >
         <Image
           src={theme === "light" ? contactLight : contactDark}
           alt="Contact Graphic"
           width={400}
           height={400}
         />
-      </div>
+      </motion.div>
 
       <div className="z-10 col-start-2 col-end-12 lg:col-span-4 lg:col-start-5">
         <div className="flex items-center justify-center gap-4 p-2 bg-gradient-to-b from-light-base00 to-light-base01 dark:from-dark-base01 dark:to-dark-base00 rounded-3xl drop-shadow-2xl">
-          <a
+          <motion.a
+            variants={graphic}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
             href="https://www.linkedin.com/in/gj-07"
             rel="noopener noreferrer"
             target="_blank"
@@ -64,8 +105,12 @@ const Contact: FunctionComponent = () => {
               alt="LinkedIn"
               className="transition duration-200 scale-75 hover:scale-100"
             />
-          </a>
-          <a
+          </motion.a>
+          <motion.a
+            variants={graphic}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
             href="https://www.github.com/gautam-j"
             rel="noopener noreferrer"
             target="_blank"
@@ -75,8 +120,12 @@ const Contact: FunctionComponent = () => {
               alt="GitHub"
               className="transition duration-200 scale-75 hover:scale-100"
             />
-          </a>
-          <a
+          </motion.a>
+          <motion.a
+            variants={graphic}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
             href="https://www.twitter.com/gautamj02"
             rel="noopener noreferrer"
             target="_blank"
@@ -86,8 +135,12 @@ const Contact: FunctionComponent = () => {
               alt="Twitter"
               className="transition duration-200 scale-75 hover:scale-100"
             />
-          </a>
-          <a
+          </motion.a>
+          <motion.a
+            variants={graphic}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
             href="https://www.instagram.com/gautam.j"
             rel="noopener noreferrer"
             target="_blank"
@@ -97,7 +150,7 @@ const Contact: FunctionComponent = () => {
               alt="Instagram"
               className="transition duration-200 scale-75 hover:scale-100"
             />
-          </a>
+          </motion.a>
         </div>
       </div>
 
