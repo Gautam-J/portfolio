@@ -25,6 +25,7 @@ import {
   ITechnology,
   IProject,
 } from "../utils/types";
+import Head from "next/head";
 
 const Home: NextPage<IProps> = (props) => {
   const {
@@ -39,6 +40,10 @@ const Home: NextPage<IProps> = (props) => {
 
   return (
     <div className="flex flex-col">
+      <Head>
+        <title>Gautam J | Portfolio</title>
+      </Head>
+
       <NavBar />
       <Intro data={roles} />
       <About data={about} />

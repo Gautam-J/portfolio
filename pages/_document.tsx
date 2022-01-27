@@ -16,9 +16,22 @@ class MyDocument extends Document {
           rel="stylesheet"
         ></link>
 
-        {/* TODO: add meta tags for SEO */}
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-        <Head />
+        <Head>
+          <meta
+            name="viewport"
+            content="initial-scale=1.0, width=device-width"
+          />
+          <meta
+            name="description"
+            content="Student who works mainly in the field of Artificial Intelligence."
+          />
+          <meta
+            name="keywords"
+            content="Full Stack, Web Developer, Open Source, Deep Learning, Machine Learning, Artificial Intelligence, Python, Computer Vision, Data Science, Student, AI, ML, Backend"
+          />
+        </Head>
 
         <body className="tracking-tight font-fira bg-light-base00 dark:bg-dark-base00">
           <Main />
