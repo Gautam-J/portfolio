@@ -106,9 +106,9 @@ const Education: FunctionComponent<{
               key={certification.credential}
               className="px-2 py-2 my-2 border-b-4 lg:px-4 lg:my-4 border-light-base05/50 dark:border-dark-base05/50 odd:col-start-1 odd:col-end-12 even:col-span-full even:col-start-2"
             >
-              <h5 className="font-bold lg:text-lg text-light-base0C dark:text-dark-base0C">
+              <h3 className="font-bold lg:text-lg text-light-base0C dark:text-dark-base0C">
                 {certification.name}
-              </h5>
+              </h3>
               <a
                 href={certification.credential}
                 className="underline cursor-pointer text-light-base09 dark:text-dark-base09 hover:text-light-base09/75 hover:dark:text-dark-base09/75"

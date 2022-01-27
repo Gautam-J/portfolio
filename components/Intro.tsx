@@ -104,6 +104,7 @@ const Intro: FunctionComponent<{
       </motion.div>
 
       <motion.button
+        aria-label="Scroll to top"
         className="fixed z-40 text-5xl border-none outline-none cursor-pointer lg:bottom-14 lg:right-14 bottom-8 right-8"
         onClick={scrollToTop}
         whileTap="tap"
