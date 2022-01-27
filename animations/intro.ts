@@ -1,23 +1,28 @@
 const rev: "reverse" = "reverse";
 
-export const upDownInfinite = {
+let isMobile = true;
+if (typeof window !== "undefined") {
+  isMobile = window.innerWidth < 768;
+}
+
+export let upDownInfinite = {
   initial: {
-    y: -40,
-    opacity: 0,
+    y: isMobile ? 0 : -40,
+    opacity: isMobile ? 1 : 0,
   },
   animate: {
     y: 0,
     opacity: 1,
     transition: {
-      repeat: Infinity,
+      repeat: isMobile ? 0 : Infinity,
       repeatType: rev,
-      duration: 1.5,
-      delay: 2,
+      duration: isMobile ? 0 : 1.5,
+      delay: isMobile ? 0 : 2,
     },
   },
 };
 
-export const onTapScale = {
+export let onTapScale = {
   initial: {
     opacity: 0,
   },
@@ -36,7 +41,7 @@ export const onTapScale = {
   },
 };
 
-export const bottomToTop = {
+export let bottomToTop = {
   initial: {
     y: 150,
     opacity: 0,
@@ -51,7 +56,7 @@ export const bottomToTop = {
   },
 };
 
-export const leftToRight = {
+export let leftToRight = {
   initial: {
     x: -200,
     opacity: 0,
@@ -66,7 +71,7 @@ export const leftToRight = {
   },
 };
 
-export const linux = {
+export let linux = {
   initial: {
     opacity: 0,
   },
@@ -80,7 +85,7 @@ export const linux = {
   },
 };
 
-export const graphic = {
+export let graphic = {
   initial: {
     scale: 1.2,
     opacity: 0,
