@@ -64,7 +64,11 @@ const NavBar: FunctionComponent = () => {
 
         {/* Mobile menu hamburger button */}
         <div className="absolute flex items-center right-8 lg:hidden">
-          <button className="" onClick={() => setNavOpen(!navOpen)}>
+          <button
+            aria-label="Navbar menu"
+            className=""
+            onClick={() => setNavOpen(!navOpen)}
+          >
             <GiHamburgerMenu className="w-7 h-7 text-light-base05 dark:text-dark-base05" />
           </button>
         </div>
