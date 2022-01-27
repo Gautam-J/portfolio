@@ -13,8 +13,8 @@ import {
   leftToRight,
   bottomToTop,
   upDownInfinite,
-  scrollUp,
-} from "../utils/animations";
+  onTapScale,
+} from "../animations/intro";
 
 const Intro: FunctionComponent<{
   data: IRole[];
@@ -36,7 +36,7 @@ const Intro: FunctionComponent<{
       <motion.h1
         variants={linux}
         initial="initial"
-        animate="animate"
+        whileInView="animate"
         className="col-start-5 mt-12 col-span-full lg:col-span-8 lg:col-start-2 linux"
       >
         $ home
@@ -47,7 +47,7 @@ const Intro: FunctionComponent<{
           className="hidden lg:block mainHeading"
           variants={leftToRight}
           initial="initial"
-          animate="animate"
+          whileInView="animate"
         >
           Hi, I&apos;m Gautam!
         </motion.h1>
@@ -65,7 +65,7 @@ const Intro: FunctionComponent<{
           className="text-md lg:pt-8 lg:text-4xl text-light-base0D dark:text-dark-base0D"
           variants={bottomToTop}
           initial="initial"
-          animate="animate"
+          whileInView="animate"
         >
           <Typewriter
             options={{
@@ -80,7 +80,7 @@ const Intro: FunctionComponent<{
       <motion.div
         variants={graphic}
         initial="initial"
-        animate="animate"
+        whileInView="animate"
         className="justify-center col-start-1 col-span-full lg:absolute lg:col-start-9 lg:col-span-full"
       >
         <Image
@@ -93,7 +93,7 @@ const Intro: FunctionComponent<{
       <motion.div
         variants={upDownInfinite}
         initial="initial"
-        animate="animate"
+        whileInView="animate"
         className="flex items-center justify-center col-start-1 col-span-full"
       >
         <BsArrowDown className="text-5xl lg:text-7xl text-light-base05 dark:text-dark-base05" />
@@ -104,7 +104,7 @@ const Intro: FunctionComponent<{
         onClick={scrollToTop}
         whileTap="tap"
         whileHover="hover"
-        variants={scrollUp}
+        variants={onTapScale}
         initial="initial"
         animate="animate"
       >
