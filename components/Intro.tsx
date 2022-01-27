@@ -48,6 +48,7 @@ const Intro: FunctionComponent<{
           variants={leftToRight}
           initial="initial"
           whileInView="animate"
+          viewport={{ once: true }}
         >
           Hi, I&apos;m Gautam!
         </motion.h1>
@@ -66,6 +67,7 @@ const Intro: FunctionComponent<{
           variants={bottomToTop}
           initial="initial"
           whileInView="animate"
+          viewport={{ once: true }}
         >
           <Typewriter
             options={{
@@ -81,6 +83,7 @@ const Intro: FunctionComponent<{
         variants={graphic}
         initial="initial"
         whileInView="animate"
+        viewport={{ once: true }}
         className="justify-center col-start-1 col-span-full lg:absolute lg:col-start-9 lg:col-span-full"
       >
         <Image
@@ -94,6 +97,7 @@ const Intro: FunctionComponent<{
         variants={upDownInfinite}
         initial="initial"
         whileInView="animate"
+        viewport={{ once: true }}
         className="flex items-center justify-center col-start-1 col-span-full"
       >
         <BsArrowDown className="text-5xl lg:text-7xl text-light-base05 dark:text-dark-base05" />

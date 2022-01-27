@@ -9,7 +9,7 @@ import guitarDark from "../public/assets/guitarDark.svg";
 import basketballLight from "../public/assets/basketballLight.svg";
 import basketballDark from "../public/assets/basketballDark.svg";
 import { motion } from "framer-motion";
-import { linux, leftToRight, graphic } from "../utils/animations";
+import { linux, leftToRight, graphic } from "../animations/intro";
 
 const About: FunctionComponent<{
   data: IAbout;
