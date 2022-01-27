@@ -7,7 +7,8 @@ export const upDownInfinite = {
     y: 0,
     opacity: 1,
     transition: {
-      yoyo: Infinity,
+      repeat: Infinity,
+      repeatType: "reverse",
       duration: 1.5,
       delay: 2,
     },
@@ -50,7 +51,7 @@ export const bottomToTop = {
 
 export const leftToRight = {
   initial: {
-    x: -1000,
+    x: -200,
     opacity: 0,
   },
   animate: {
@@ -58,7 +59,7 @@ export const leftToRight = {
     opacity: 1,
     transition: {
       duration: 1,
-      delay: 0.5,
+      delay: 0.2,
     },
   },
 };
@@ -70,10 +71,9 @@ export const linux = {
   animate: {
     opacity: 1,
     transition: {
-      duration: 3,
-      delay: 0.5,
-      yoyo: Infinity,
-      ease: "easeInOut",
+      duration: 2,
+      repeat: Infinity,
+      repeatType: "reverse",
     },
   },
 };
@@ -113,7 +113,7 @@ export const mobileNavBar = {
 export const graphic = {
   initial: {
     opacity: 0,
-    scale: 2,
+    scale: 1.5,
   },
   animate: {
     scale: 1,

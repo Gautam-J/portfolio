@@ -4,9 +4,12 @@ import { ThemeProvider } from "next-themes";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider attribute="class" defaultTheme="light">
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <>
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <ThemeProvider attribute="class" defaultTheme="light">
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </>
   );
 }
 
