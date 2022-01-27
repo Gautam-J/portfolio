@@ -4,6 +4,8 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import educationLight from "../public/assets/educationLight.svg";
 import educationDark from "../public/assets/educationDark.svg";
+import { motion } from "framer-motion";
+import { linux, leftToRight, graphic } from "../animations/intro";
 
 const Education: FunctionComponent<{
   data: { degrees: IDegree[]; certifications: ICertification[] };
@@ -15,20 +17,40 @@ const Education: FunctionComponent<{
       id="Education"
       className="relative grid items-center justify-center min-h-screen grid-cols-12 h-max bg-gradient-to-b from-light-base01 to-light-base00 dark:from-dark-base01 dark:to-dark-base00"
     >
-      <h1 className="col-start-7 mt-4 col-span-full lg:col-start-9 linux lg:col-span-full">
+      <motion.h1
+        variants={linux}
+        initial="initial"
+        whileInView="animate"
+        className="col-start-7 mt-4 col-span-full lg:col-start-9 linux lg:col-span-full"
+      >
         $ man
-      </h1>
+      </motion.h1>
       <div className="flex justify-center col-start-1 col-span-full">
-        <h1 className="my-6 lg:my-14 mainHeading">Education</h1>
+        <motion.h1
+          variants={leftToRight}
+          initial="initial"
+          whileInView="animate"
+          className="my-6 lg:my-14 mainHeading"
+        >
+          Education
+        </motion.h1>
       </div>
 
       <div className="z-10 col-start-2 col-end-12 my-2 lg:my-10 lg:col-span-8 lg:col-start-3">
-        <h3 className="text-3xl font-bold lg:text-5xl text-light-base0D dark:text-dark-base0D">
+        <motion.h3
+          variants={leftToRight}
+          initial="initial"
+          whileInView="animate"
+          className="text-3xl font-bold lg:text-5xl text-light-base0D dark:text-dark-base0D"
+        >
           Degrees
-        </h3>
+        </motion.h3>
         <div className="grid flex-wrap items-start justify-around grid-cols-12 my-2 lg:flex lg:my-4">
           {data.degrees.map((degree) => (
-            <div
+            <motion.div
+              variants={leftToRight}
+              initial="initial"
+              whileInView="animate"
               key={degree.degree}
               className="flex flex-col items-start justify-center my-4 space-y-1 odd:col-start-1 odd:col-span-full even:col-span-full even:col-start-2"
             >
@@ -40,12 +62,17 @@ const Education: FunctionComponent<{
                 {new Date(degree.endDate).getFullYear()}
               </p>
               <h5 className="text-lg lg:text-xl">{degree.degree}</h5>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
 
-      <div className="flex justify-center col-start-1 col-span-full lg:absolute lg:right-0 lg:top-1/4">
+      <motion.div
+        variants={graphic}
+        initial="initial"
+        whileInView="animate"
+        className="flex justify-center col-start-1 col-span-full lg:absolute lg:right-0 lg:top-1/4"
+      >
         <Image
           src={theme === "light" ? educationLight : educationDark}
           alt="Education graphic"
@@ -53,15 +80,23 @@ const Education: FunctionComponent<{
           height="250px"
           className="scale-75 lg:scale-100"
         />
-      </div>
+      </motion.div>
 
       <div className="z-10 col-start-2 col-end-12">
-        <h3 className="my-4 text-3xl font-bold lg:text-5xl text-light-base0D dark:text-dark-base0D">
+        <motion.h3
+          variants={leftToRight}
+          initial="initial"
+          whileInView="animate"
+          className="my-4 text-3xl font-bold lg:text-5xl text-light-base0D dark:text-dark-base0D"
+        >
           Certifications
-        </h3>
+        </motion.h3>
         <div className="grid flex-wrap items-start grid-cols-12 mb-10 lg:space-x-4 lg:flex justify-evenly">
           {data.certifications.map((certification) => (
-            <div
+            <motion.div
+              variants={leftToRight}
+              initial="initial"
+              whileInView="animate"
               key={certification.credential}
               className="px-2 py-2 my-2 border-b-4 lg:px-4 lg:my-4 border-light-base05/50 dark:border-dark-base05/50 odd:col-start-1 odd:col-end-12 even:col-span-full even:col-start-2"
             >
@@ -84,7 +119,7 @@ const Education: FunctionComponent<{
                   month: "short",
                 })}
               </span>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
