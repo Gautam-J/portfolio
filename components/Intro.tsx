@@ -6,6 +6,15 @@ import Typewriter from "typewriter-effect";
 import homeLight from "../public/assets/homeLight.svg";
 import homeDark from "../public/assets/homeDark.svg";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import {
+  graphic,
+  linux,
+  leftToRight,
+  bottomToTop,
+  upDownInfinite,
+  scrollUp,
+} from "../utils/animations";
 
 const Intro: FunctionComponent<{
   data: IRole[];
@@ -24,19 +33,40 @@ const Intro: FunctionComponent<{
       id="Home"
       className="relative grid items-center grid-cols-12 introContainerMobile lg:introContainer bg-gradient-to-b from-light-base00 to-light-base01 dark:from-dark-base00 dark:to-dark-base01"
     >
-      <h1 className="col-start-5 mt-12 col-span-full lg:col-span-8 lg:col-start-2 linux">
+      <motion.h1
+        variants={linux}
+        initial="initial"
+        animate="animate"
+        className="col-start-5 mt-12 col-span-full lg:col-span-8 lg:col-start-2 linux"
+      >
         $ home
-      </h1>
+      </motion.h1>
 
       <div className="col-start-2 lg:mb-24 col-span-full lg:col-span-7 lg:col-start-3">
-        <h1 className="hidden lg:block mainHeading">Hi, I&apos;m Gautam!</h1>
+        <motion.h1
+          className="hidden lg:block mainHeading"
+          variants={leftToRight}
+          initial="initial"
+          animate="animate"
+        >
+          Hi, I&apos;m Gautam!
+        </motion.h1>
 
         <div className="mainHeading lg:hidden">
-          <h1 className="">Hi,</h1>
-          <h1 className="">I&apos;m Gautam!</h1>
+          <motion.h1 variants={leftToRight} initial="initial" animate="animate">
+            Hi,
+          </motion.h1>
+          <motion.h1 variants={leftToRight} initial="initial" animate="animate">
+            I&apos;m Gautam!
+          </motion.h1>
         </div>
 
-        <p className="text-md lg:pt-8 lg:text-4xl text-light-base0D dark:text-dark-base0D">
+        <motion.p
+          className="text-md lg:pt-8 lg:text-4xl text-light-base0D dark:text-dark-base0D"
+          variants={bottomToTop}
+          initial="initial"
+          animate="animate"
+        >
           <Typewriter
             options={{
               strings: data.map((item) => item.role),
@@ -44,28 +74,42 @@ const Intro: FunctionComponent<{
               loop: true,
             }}
           />
-        </p>
+        </motion.p>
       </div>
 
-      <div className="justify-center col-start-1 col-span-full lg:absolute lg:col-start-9 lg:col-span-full">
+      <motion.div
+        variants={graphic}
+        initial="initial"
+        animate="animate"
+        className="justify-center col-start-1 col-span-full lg:absolute lg:col-start-9 lg:col-span-full"
+      >
         <Image
           src={theme === "light" ? homeLight : homeDark}
           alt="Home Graphic"
           className="scale-75"
         />
-      </div>
+      </motion.div>
 
-      <div className="flex items-center justify-center col-start-1 col-span-full">
+      <motion.div
+        variants={upDownInfinite}
+        initial="initial"
+        animate="animate"
+        className="flex items-center justify-center col-start-1 col-span-full"
+      >
         <BsArrowDown className="text-5xl lg:text-7xl text-light-base05 dark:text-dark-base05" />
-      </div>
+      </motion.div>
 
-      {/* TODO: on click animation */}
-      <button
+      <motion.button
         className="fixed z-40 text-5xl border-none outline-none cursor-pointer lg:bottom-14 lg:right-14 bottom-8 right-8"
         onClick={scrollToTop}
+        whileTap="tap"
+        whileHover="hover"
+        variants={scrollUp}
+        initial="initial"
+        animate="animate"
       >
-        <BsFillArrowUpCircleFill className="transition duration-300 text-light-base05 dark:text-dark-base05 hover:scale-125" />
-      </button>
+        <BsFillArrowUpCircleFill className="text-light-base05 dark:text-dark-base05" />
+      </motion.button>
     </div>
   );
 };

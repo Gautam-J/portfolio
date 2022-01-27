@@ -39,7 +39,7 @@ const Home: NextPage<IProps> = (props) => {
   } = props;
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col overflow-x-hidden">
       <Head>
         <title>Gautam J | Portfolio</title>
       </Head>
