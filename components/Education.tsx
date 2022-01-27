@@ -70,7 +70,7 @@ const Education: FunctionComponent<{
               </h5>
               <a
                 href={certification.credential}
-                className="underline cursor-pointer text-light-base09 dark:text-dark-base09"
+                className="underline cursor-pointer text-light-base09 dark:text-dark-base09 hover:text-light-base09/75 hover:dark:text-dark-base09/75"
                 rel="noopener noreferrer"
                 target="_blank"
               >

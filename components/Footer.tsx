@@ -4,7 +4,7 @@ import { AiOutlineCopyrightCircle } from "react-icons/ai";
 const Footer: FunctionComponent = () => {
   return (
     <div className="grid grid-cols-12 bg-light-base00 dark:bg-dark-base00">
-      <div className="flex items-center justify-start col-start-2 col-end-12 py-4 gap-x-2 text-light-base09 dark:text-dark-base09">
+      <div className="flex items-center justify-start col-start-2 col-end-12 py-4 gap-x-2 text-light-base09 dark:text-dark-base09 hover:text-light-base09/75 hover:dark:text-dark-base09/75">
         <AiOutlineCopyrightCircle />
         <p>Copyright {new Date().getFullYear()}, Gautam J</p>
       </div>

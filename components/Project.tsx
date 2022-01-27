@@ -49,7 +49,7 @@ export const Project: FunctionComponent<{ data: IProject[] }> = ({ data }) => {
         {data.map((project) => (
           <div
             key={project.title}
-            className="overflow-hidden rounded-xl drop-shadow-2xl"
+            className="overflow-hidden rounded-xl drop-shadow-xl hover:drop-shadow-2xl"
           >
             <div className="p-4 lg:p-5 bg-gradient-to-b from-light-base01 to-light-base00 dark:from-dark-base01 dark:to-dark-base00">
               <h3 className="text-lg font-bold lg:mb-1 lg:text-2xl text-light-base0D dark:text-dark-base0D">
@@ -62,7 +62,7 @@ export const Project: FunctionComponent<{ data: IProject[] }> = ({ data }) => {
                 })}
                 {"  "}|{" "}
                 <a
-                  className="underline"
+                  className="underline hover:text-light-base09/75 hover:dark:text-dark-base09/75"
                   href={project.link}
                   rel="noopener noreferrer"
                   target="_blank"

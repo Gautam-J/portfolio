@@ -9,8 +9,7 @@ export const NavItem: FunctionComponent<{
   setNavOpen: null | Function;
 }> = ({ name, setNavOpen }) => {
   return (
-    // TODO: Add hover animation
-    <div className="font-bold tracking-tighter lg:font-normal lg:text-lg text-light-base08 dark:text-dark-base08">
+    <div className="font-bold tracking-tighter transition duration-200 hover:underline lg:font-normal lg:text-lg text-light-base08 dark:text-dark-base08">
       <a
         href={`#${name}`}
         onClick={() => (setNavOpen ? setNavOpen(false) : {})}
@@ -38,9 +37,9 @@ const NavBar: FunctionComponent = () => {
     <nav className="bg-gradient-to-b from-light-base01 to-light-base00 dark:from-dark-base01 dark:to-dark-base00">
       <div className="grid items-center grid-cols-12 gap-1 pt-4 lg:gap-5">
         {/* Branding */}
-        <div className="col-span-5 col-start-2 lg:col-span-2 lg:col-start-2">
+        <div className="col-span-5 col-start-2 transition duration-300 lg:col-span-2 lg:col-start-2">
           <a href="#Connect">
-            <span className="text-2xl font-bold lg:text-3xl text-light-base09 dark:text-dark-base09">
+            <span className="text-2xl font-bold lg:text-3xl text-light-base09 dark:text-dark-base09 hover:text-light-base09/75 hover:dark:text-dark-base09/75">
               Gautam J
             </span>
           </a>

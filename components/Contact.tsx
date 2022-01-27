@@ -27,7 +27,7 @@ export const Contact: FunctionComponent = () => {
         />
       </div>
       <div className="z-10 flex items-center justify-center col-start-2 col-end-12 lg:justify-start lg:flex-none">
-        <h1 className="mb-4 mainHeading">Contact</h1>
+        <h1 className="mb-4 mainHeading">Connect</h1>
       </div>
       <div className="z-10 col-start-2 lg:col-start-3 col-span-full lg:col-span-full">
         <h2 className="mb-2 text-3xl font-bold lg:text-4xl text-light-base0D dark:text-dark-base0D">
@@ -35,7 +35,7 @@ export const Contact: FunctionComponent = () => {
         </h2>
         <a
           href="mailto:gautam.jayapal@gmail.com"
-          className="text-lg underline text-light-base0C dark:text-dark-base0C"
+          className="text-lg underline text-light-base0C dark:text-dark-base0C hover:text-light-base0C/75 hover:dark:text-dark-base0C/75"
           rel="noopener noreferrer"
           target="_blank"
         >
@@ -59,28 +59,44 @@ export const Contact: FunctionComponent = () => {
             rel="noopener noreferrer"
             target="_blank"
           >
-            <Image src={linkedin} alt="LinkedIn" className="scale-75" />
+            <Image
+              src={linkedin}
+              alt="LinkedIn"
+              className="transition duration-200 scale-75 hover:scale-100"
+            />
           </a>
           <a
             href="https://www.github.com/gautam-j"
             rel="noopener noreferrer"
             target="_blank"
           >
-            <Image src={github} alt="GitHub" className="scale-75" />
+            <Image
+              src={github}
+              alt="GitHub"
+              className="transition duration-200 scale-75 hover:scale-100"
+            />
           </a>
           <a
             href="https://www.twitter.com/gautamj02"
             rel="noopener noreferrer"
             target="_blank"
           >
-            <Image src={twitter} alt="Twitter" className="scale-75" />
+            <Image
+              src={twitter}
+              alt="Twitter"
+              className="transition duration-200 scale-75 hover:scale-100"
+            />
           </a>
           <a
             href="https://www.instagram.com/gautam.j"
             rel="noopener noreferrer"
             target="_blank"
           >
-            <Image src={instagram} alt="Instagram" className="scale-75" />
+            <Image
+              src={instagram}
+              alt="Instagram"
+              className="transition duration-200 scale-75 hover:scale-100"
+            />
           </a>
         </div>
       </div>
@@ -90,7 +106,7 @@ export const Contact: FunctionComponent = () => {
           Made using Next.js, TypeScript, MongoDB, TailwindCSS, AWS, and Framer
           Motion |{" "}
           <a
-            className="underline"
+            className="underline hover:text-light-base09/75 hover:dark:text-dark-base09/75"
             href="https://www.github.com/gautam-j/portfolio"
             rel="noopener noreferrer"
             target="_blank"
