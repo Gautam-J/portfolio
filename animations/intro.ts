@@ -80,10 +80,12 @@ export const linux = {
 
 export const graphic = {
   initial: {
+    scale: 1.2,
     opacity: 0,
   },
   animate: {
     opacity: 1,
+    scale: 1,
     transition: {
       duration: 2,
       delay: 0.1,

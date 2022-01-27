@@ -90,7 +90,13 @@ const About: FunctionComponent<{
           />
         </div>
 
-        <div className="flex items-center justify-center lg:hidden">
+        <motion.div
+          variants={graphic}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+          className="flex items-center justify-center lg:hidden"
+        >
           <Image
             src={theme === "light" ? guitarLight : guitarDark}
             alt="Guitar Graphic"
@@ -98,7 +104,7 @@ const About: FunctionComponent<{
             height="150px"
             width="150px"
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

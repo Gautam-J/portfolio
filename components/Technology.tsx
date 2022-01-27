@@ -4,6 +4,8 @@ import { ITechnology } from "../utils/types";
 import { useTheme } from "next-themes";
 import technologyLight from "../public/assets/technologyLight.svg";
 import technologyDark from "../public/assets/technologyDark.svg";
+import { motion } from "framer-motion";
+import { linux, leftToRight, graphic } from "../animations/intro";
 
 const Technology: FunctionComponent<{ data: ITechnology[] }> = ({ data }) => {
   if (!process.env.S3_BUCKET_NAME) {

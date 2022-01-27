@@ -30,6 +30,7 @@ const Education: FunctionComponent<{
           variants={leftToRight}
           initial="initial"
           whileInView="animate"
+          viewport={{ once: true }}
           className="my-6 lg:my-14 mainHeading"
         >
           Education
@@ -41,6 +42,7 @@ const Education: FunctionComponent<{
           variants={leftToRight}
           initial="initial"
           whileInView="animate"
+          viewport={{ once: true }}
           className="text-3xl font-bold lg:text-5xl text-light-base0D dark:text-dark-base0D"
         >
           Degrees
@@ -51,6 +53,7 @@ const Education: FunctionComponent<{
               variants={leftToRight}
               initial="initial"
               whileInView="animate"
+              viewport={{ once: true }}
               key={degree.degree}
               className="flex flex-col items-start justify-center my-4 space-y-1 odd:col-start-1 odd:col-span-full even:col-span-full even:col-start-2"
             >
@@ -71,6 +74,7 @@ const Education: FunctionComponent<{
         variants={graphic}
         initial="initial"
         whileInView="animate"
+        viewport={{ once: true }}
         className="flex justify-center col-start-1 col-span-full lg:absolute lg:right-0 lg:top-1/4"
       >
         <Image
@@ -87,6 +91,7 @@ const Education: FunctionComponent<{
           variants={leftToRight}
           initial="initial"
           whileInView="animate"
+          viewport={{ once: true }}
           className="my-4 text-3xl font-bold lg:text-5xl text-light-base0D dark:text-dark-base0D"
         >
           Certifications
@@ -97,6 +102,7 @@ const Education: FunctionComponent<{
               variants={leftToRight}
               initial="initial"
               whileInView="animate"
+              viewport={{ once: true }}
               key={certification.credential}
               className="px-2 py-2 my-2 border-b-4 lg:px-4 lg:my-4 border-light-base05/50 dark:border-dark-base05/50 odd:col-start-1 odd:col-end-12 even:col-span-full even:col-start-2"
             >
