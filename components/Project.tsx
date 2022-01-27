@@ -4,6 +4,8 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 import projectLight from "../public/assets/projectLight.svg";
 import projectDark from "../public/assets/projectDark.svg";
+import { motion } from "framer-motion";
+import { linux, leftToRight, graphic } from "../animations/intro";
 
 const Project: FunctionComponent<{ data: IProject[] }> = ({ data }) => {
   if (!process.env.S3_BUCKET_NAME) {
@@ -21,33 +23,62 @@ const Project: FunctionComponent<{ data: IProject[] }> = ({ data }) => {
       id="Projects"
       className="relative grid items-center justify-center min-h-screen grid-cols-12 h-max bg-gradient-to-b from-light-base01 to-light-base00 dark:from-dark-base01 dark:to-dark-base00"
     >
-      <h1 className="z-10 col-start-2 mt-4 lg:mt-10 lg:col-start-8 linux col-span-full">
+      <motion.h1
+        variants={linux}
+        initial="initial"
+        whileInView="animate"
+        className="z-10 col-start-2 mt-4 lg:mt-10 lg:col-start-8 linux col-span-full"
+      >
         $ grep
-      </h1>
+      </motion.h1>
       <div className="z-10 flex items-center justify-center col-start-1 lg:justify-start col-span-full lg:flex-none lg:col-start-2 lg:col-span-full">
-        <h1 className="mt-10 mb-16 lg:mt-10 mainHeading">Projects</h1>
+        <motion.h1
+          variants={leftToRight}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+          className="mt-10 mb-16 lg:mt-10 mainHeading"
+        >
+          Projects
+        </motion.h1>
       </div>
-      <div className="absolute top-0 right-0 hidden lg:block">
+      <motion.div
+        variants={graphic}
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true }}
+        className="absolute top-0 right-0 hidden lg:block"
+      >
         <Image
           src={theme === "light" ? projectLight : projectDark}
           alt="Projects Graphic"
           width="350px"
           height="350px"
         />
-      </div>
+      </motion.div>
 
-      <div className="absolute top-0 right-0 lg:hidden">
+      <motion.div
+        variants={graphic}
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true }}
+        className="absolute top-0 right-0 lg:hidden"
+      >
         <Image
           src={theme === "light" ? projectLight : projectDark}
           alt="Projects Graphic"
           width="200px"
           height="200px"
         />
-      </div>
+      </motion.div>
 
       <div className="grid items-start grid-cols-1 col-start-2 col-end-12 mb-10 gap-y-10 lg:grid-cols-3 lg:gap-x-20 lg:gap-y-14">
         {data.map((project) => (
-          <div
+          <motion.div
+            variants={leftToRight}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
             key={project.title}
             className="overflow-hidden rounded-xl drop-shadow-xl hover:drop-shadow-2xl"
           >
@@ -80,7 +111,7 @@ const Project: FunctionComponent<{ data: IProject[] }> = ({ data }) => {
                 layout="responsive"
               />
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
