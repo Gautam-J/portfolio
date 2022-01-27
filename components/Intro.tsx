@@ -20,7 +20,10 @@ const Intro: FunctionComponent<{
   };
 
   return (
-    <div className="relative grid items-center grid-cols-12 introContainerMobile lg:introContainer bg-gradient-to-b from-light-base00 to-light-base01 dark:from-dark-base00 dark:to-dark-base01">
+    <div
+      id="Home"
+      className="relative grid items-center grid-cols-12 introContainerMobile lg:introContainer bg-gradient-to-b from-light-base00 to-light-base01 dark:from-dark-base00 dark:to-dark-base01"
+    >
       <h1 className="col-start-5 mt-12 col-span-full lg:col-span-8 lg:col-start-2 linux">
         $ home
       </h1>

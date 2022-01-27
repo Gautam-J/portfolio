@@ -17,7 +17,10 @@ export const Project: FunctionComponent<{ data: IProject[] }> = ({ data }) => {
   const { theme } = useTheme();
 
   return (
-    <div className="relative grid items-center justify-center min-h-screen grid-cols-12 h-max bg-gradient-to-b from-light-base01 to-light-base00 dark:from-dark-base01 dark:to-dark-base00">
+    <div
+      id="Projects"
+      className="relative grid items-center justify-center min-h-screen grid-cols-12 h-max bg-gradient-to-b from-light-base01 to-light-base00 dark:from-dark-base01 dark:to-dark-base00"
+    >
       <h1 className="z-10 col-start-2 mt-4 lg:mt-10 lg:col-start-8 linux col-span-full">
         $ grep
       </h1>

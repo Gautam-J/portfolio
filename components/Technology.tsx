@@ -26,7 +26,10 @@ export const Technology: FunctionComponent<{ data: ITechnology[] }> = ({
   const others = data.filter((item) => item._id === "others")[0].technologies;
 
   return (
-    <div className="relative grid items-center justify-center min-h-screen grid-cols-12 h-max bg-gradient-to-b from-light-base00 to-light-base01 dark:from-dark-base00 dark:to-dark-base01">
+    <div
+      id="Technology"
+      className="relative grid items-center justify-center min-h-screen grid-cols-12 h-max bg-gradient-to-b from-light-base00 to-light-base01 dark:from-dark-base00 dark:to-dark-base01"
+    >
       <h1 className="col-start-2 mt-4 lg:mt-14 linux col-span-full">
         $ groups
       </h1>

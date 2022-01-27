@@ -10,9 +10,11 @@ export const NavItem: FunctionComponent<{
 }> = ({ name, setNavOpen }) => {
   return (
     // TODO: Add hover animation
-    // TODO: Add links
     <div className="font-bold tracking-tighter lg:font-normal lg:text-lg text-light-base08 dark:text-dark-base08">
-      <a href="" onClick={() => (setNavOpen ? setNavOpen(false) : {})}>
+      <a
+        href={`#${name}`}
+        onClick={() => (setNavOpen ? setNavOpen(false) : {})}
+      >
         {name}
       </a>
     </div>
@@ -37,8 +39,7 @@ const NavBar: FunctionComponent = () => {
       <div className="grid items-center grid-cols-12 gap-1 pt-4 lg:gap-5">
         {/* Branding */}
         <div className="col-span-5 col-start-2 lg:col-span-2 lg:col-start-2">
-          {/* TODO: add link to contact section */}
-          <a href="#">
+          <a href="#Connect">
             <span className="text-2xl font-bold lg:text-3xl text-light-base09 dark:text-dark-base09">
               Gautam J
             </span>

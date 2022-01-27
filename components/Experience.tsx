@@ -7,27 +7,16 @@ import Image from "next/image";
 import experienceLight from "../public/assets/experienceLight.svg";
 import experienceDark from "../public/assets/experienceDark.svg";
 
-const Role: FunctionComponent<{ pos: string }> = ({ pos }) => {
-  return (
-    <div>
-      <div className="flex items-center justify-start lg:mt-1">
-        <GoPrimitiveDot className="mr-2 lg:mr-4 text-light-base05 dark:text-dark-base05" />
-        <p className="text-lg lg:text-xl">{pos}</p>
-      </div>
-      <div>
-        <BsArrowUp className="my-1 mr-4 scale-150 text-light-base05 dark:text-dark-base05" />
-      </div>
-    </div>
-  );
-};
-
 const Experience: FunctionComponent<{
   data: IExperience[];
 }> = ({ data }) => {
   const { theme } = useTheme();
 
   return (
-    <div className="relative grid items-center justify-center min-h-screen grid-cols-12 h-max bg-gradient-to-b from-light-base00 to-light-base01 dark:from-dark-base00 dark:to-dark-base01">
+    <div
+      id="Experience"
+      className="relative grid items-center justify-center min-h-screen grid-cols-12 h-max bg-gradient-to-b from-light-base00 to-light-base01 dark:from-dark-base00 dark:to-dark-base01"
+    >
       <div className="absolute hidden col-span-4 col-start-1 lg:block top-10">
         <Image
           src={theme === "light" ? experienceLight : experienceDark}

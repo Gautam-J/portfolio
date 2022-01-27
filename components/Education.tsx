@@ -11,7 +11,10 @@ const Education: FunctionComponent<{
   const { theme } = useTheme();
 
   return (
-    <div className="relative grid items-center justify-center min-h-screen grid-cols-12 h-max bg-gradient-to-b from-light-base01 to-light-base00 dark:from-dark-base01 dark:to-dark-base00">
+    <div
+      id="Education"
+      className="relative grid items-center justify-center min-h-screen grid-cols-12 h-max bg-gradient-to-b from-light-base01 to-light-base00 dark:from-dark-base01 dark:to-dark-base00"
+    >
       <h1 className="col-start-7 mt-4 col-span-full lg:col-start-9 linux lg:col-span-full">
         $ man
       </h1>

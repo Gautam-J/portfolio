@@ -11,7 +11,10 @@ import { useTheme } from "next-themes";
 export const Contact: FunctionComponent = () => {
   const { theme } = useTheme();
   return (
-    <div className="relative grid grid-cols-12 contactContainer bg-gradient-to-b from-light-base00 to-light-base01 dark:from-dark-base00 dark:to-dark-base01">
+    <div
+      id="Connect"
+      className="relative grid grid-cols-12 contactContainer bg-gradient-to-b from-light-base00 to-light-base01 dark:from-dark-base00 dark:to-dark-base01"
+    >
       <h1 className="z-10 col-start-5 lg:col-start-8 mt-14 linux col-span-full lg:col-span-full">
         $ ping
       </h1>
