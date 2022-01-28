@@ -3,7 +3,6 @@ if (typeof window !== "undefined") {
   isMobile = window.innerWidth < 768;
 }
 
-isMobile = false;
 export const bottomToTop = {
   initial: {
     y: isMobile ? 0 : 150,
