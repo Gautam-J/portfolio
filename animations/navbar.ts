@@ -1,31 +1,36 @@
+let isMobile = true;
+if (typeof window !== "undefined") {
+  isMobile = window.innerWidth < 768;
+}
+
 export const navBar = {
   initial: {
-    y: -100,
+    y: isMobile ? 0 : -100,
   },
   animate: {
     y: 0,
     transition: {
-      duration: 1,
-      delay: 0.5,
+      duration: isMobile ? 0 : 1,
+      delay: isMobile ? 0 : 0.5,
     },
   },
 };
 
 export const mobileNavBar = {
   initial: {
-    opacity: 0,
+    opacity: isMobile ? 1 : 0,
   },
   animate: {
     opacity: 1,
     transition: {
-      duration: 0.2,
+      duration: isMobile ? 0 : 0.2,
     },
   },
   exit: {
-    opacity: 0,
+    opacity: isMobile ? 1 : 0,
     transition: {
-      delay: 0.2,
-      duration: 0.2,
+      delay: isMobile ? 0 : 0.2,
+      duration: isMobile ? 0 : 0.2,
     },
   },
 };
