@@ -5,7 +5,8 @@ import { useTheme } from "next-themes";
 import projectLight from "../public/assets/projectLight.svg";
 import projectDark from "../public/assets/projectDark.svg";
 import { motion } from "framer-motion";
-import { linux, leftToRight, graphic } from "../animations/intro";
+import { linux, graphic } from "../animations/intro";
+import { bottomToTop } from "../animations/projects";
 
 const Project: FunctionComponent<{ data: IProject[] }> = ({ data }) => {
   if (!process.env.S3_BUCKET_NAME) {
@@ -33,7 +34,7 @@ const Project: FunctionComponent<{ data: IProject[] }> = ({ data }) => {
       </motion.h1>
       <div className="z-10 flex items-center justify-center col-start-1 lg:justify-start col-span-full lg:flex-none lg:col-start-2 lg:col-span-full">
         <motion.h1
-          variants={leftToRight}
+          variants={bottomToTop}
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
@@ -75,7 +76,7 @@ const Project: FunctionComponent<{ data: IProject[] }> = ({ data }) => {
       <div className="grid items-start grid-cols-1 col-start-2 col-end-12 mb-10 gap-y-10 lg:grid-cols-3 lg:gap-x-20 lg:gap-y-14">
         {data.map((project) => (
           <motion.div
-            variants={leftToRight}
+            variants={bottomToTop}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}

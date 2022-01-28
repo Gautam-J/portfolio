@@ -1,36 +1,31 @@
 const rev: "reverse" = "reverse";
 
-let isMobile = true;
-if (typeof window !== "undefined") {
-  isMobile = window.innerWidth < 768;
-}
-
-export let upDownInfinite = {
+export const upDownInfinite = {
   initial: {
-    y: isMobile ? 0 : -40,
-    opacity: isMobile ? 1 : 0,
+    y: -40,
+    opacity: 0,
   },
   animate: {
     y: 0,
     opacity: 1,
     transition: {
-      repeat: isMobile ? 0 : Infinity,
+      repeat: Infinity,
       repeatType: rev,
-      duration: isMobile ? 0 : 1.5,
-      delay: isMobile ? 0 : 2,
+      duration: 1.5,
+      delay: 2,
     },
   },
 };
 
-export let onTapScale = {
+export const onTapScale = {
   initial: {
-    opacity: isMobile ? 1 : 0,
+    opacity: 0,
   },
   animate: {
     opacity: 1,
     transition: {
-      duration: isMobile ? 0 : 1,
-      delay: isMobile ? 0 : 2,
+      duration: 1,
+      delay: 2,
     },
   },
   tap: {
@@ -41,61 +36,61 @@ export let onTapScale = {
   },
 };
 
-export let bottomToTop = {
+export const bottomToTop = {
   initial: {
-    y: isMobile ? 0 : 150,
-    opacity: isMobile ? 1 : 0,
+    y: 150,
+    opacity: 0,
   },
   animate: {
     y: 0,
     opacity: 1,
     transition: {
-      duration: isMobile ? 0 : 1,
-      delay: isMobile ? 0 : 0.3,
+      duration: 1,
+      delay: 0.3,
     },
   },
 };
 
-export let leftToRight = {
+export const leftToRight = {
   initial: {
-    x: isMobile ? 0 : -200,
-    opacity: isMobile ? 1 : 0,
+    x: -200,
+    opacity: 0,
   },
   animate: {
     x: 0,
     opacity: 1,
     transition: {
-      duration: isMobile ? 0 : 1,
-      delay: isMobile ? 0 : 0.2,
+      duration: 1,
+      delay: 0.2,
     },
   },
 };
 
-export let linux = {
+export const linux = {
   initial: {
-    opacity: isMobile ? 1 : 0,
+    opacity: 0,
   },
   animate: {
     opacity: 1,
     transition: {
-      duration: isMobile ? 0 : 2,
-      repeat: isMobile ? 0 : Infinity,
+      duration: 2,
+      repeat: Infinity,
       repeatType: rev,
     },
   },
 };
 
-export let graphic = {
+export const graphic = {
   initial: {
-    scale: isMobile ? 1 : 1.2,
-    opacity: isMobile ? 1 : 0,
+    scale: 1.2,
+    opacity: 0,
   },
   animate: {
     opacity: 1,
     scale: 1,
     transition: {
-      duration: isMobile ? 0 : 2,
-      delay: isMobile ? 0 : 0.1,
+      duration: 2,
+      delay: 0.1,
     },
   },
 };
