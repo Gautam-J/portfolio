@@ -2,6 +2,8 @@
 
 Made using Next.js, TypeScript, MongoDB, TailwindCSS, AWS, and Framer Motion.
 
+Deployed [here](https://portfolio-gautam-j.vercel.app/). Designs can be found [here](https://www.figma.com/community/file/1066971493541076552/Portfolio).
+
 ## Screenshots
 
 ### Desktop
