@@ -6,6 +6,7 @@ import technologyLight from "../public/assets/technologyLight.svg";
 import technologyDark from "../public/assets/technologyDark.svg";
 import { motion } from "framer-motion";
 import { linux, leftToRight, graphic } from "../animations/intro";
+import { leftToRightOther } from "../animations/technology";
 
 const Technology: FunctionComponent<{ data: ITechnology[] }> = ({ data }) => {
   if (!process.env.S3_BUCKET_NAME) {
@@ -132,8 +133,7 @@ const Technology: FunctionComponent<{ data: ITechnology[] }> = ({ data }) => {
       <div className="col-start-2 col-end-12 mb-6 lg:col-start-2 lg:col-end-10">
         <div className="flex flex-col items-start justify-center lg:mb-8">
           <motion.h3
-            // TODO: Fix in mobile view
-            variants={leftToRight}
+            variants={leftToRightOther}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
