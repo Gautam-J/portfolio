@@ -24,13 +24,13 @@ export let upDownInfinite = {
 
 export let onTapScale = {
   initial: {
-    opacity: 0,
+    opacity: isMobile ? 1 : 0,
   },
   animate: {
     opacity: 1,
     transition: {
-      duration: 1,
-      delay: 2,
+      duration: isMobile ? 0 : 1,
+      delay: isMobile ? 0 : 2,
     },
   },
   tap: {
@@ -43,43 +43,43 @@ export let onTapScale = {
 
 export let bottomToTop = {
   initial: {
-    y: 150,
-    opacity: 0,
+    y: isMobile ? 0 : 150,
+    opacity: isMobile ? 1 : 0,
   },
   animate: {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 1,
-      delay: 0.3,
+      duration: isMobile ? 0 : 1,
+      delay: isMobile ? 0 : 0.3,
     },
   },
 };
 
 export let leftToRight = {
   initial: {
-    x: -200,
-    opacity: 0,
+    x: isMobile ? 0 : -200,
+    opacity: isMobile ? 1 : 0,
   },
   animate: {
     x: 0,
     opacity: 1,
     transition: {
-      duration: 1,
-      delay: 0.2,
+      duration: isMobile ? 0 : 1,
+      delay: isMobile ? 0 : 0.2,
     },
   },
 };
 
 export let linux = {
   initial: {
-    opacity: 0,
+    opacity: isMobile ? 1 : 0,
   },
   animate: {
     opacity: 1,
     transition: {
-      duration: 2,
-      repeat: Infinity,
+      duration: isMobile ? 0 : 2,
+      repeat: isMobile ? 0 : Infinity,
       repeatType: rev,
     },
   },
@@ -87,15 +87,15 @@ export let linux = {
 
 export let graphic = {
   initial: {
-    scale: 1.2,
-    opacity: 0,
+    scale: isMobile ? 1 : 1.2,
+    opacity: isMobile ? 1 : 0,
   },
   animate: {
     opacity: 1,
     scale: 1,
     transition: {
-      duration: 2,
-      delay: 0.1,
+      duration: isMobile ? 0 : 2,
+      delay: isMobile ? 0 : 0.1,
     },
   },
 };
