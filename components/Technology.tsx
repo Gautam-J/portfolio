@@ -71,12 +71,14 @@ const Technology: FunctionComponent<{ data: ITechnology[] }> = ({ data }) => {
                 viewport={{ once: true }}
                 key={item}
               >
-                <Image
-                  src={`${baseURL}/${item}.svg`}
-                  alt={item}
-                  width="75px"
-                  height="75px"
-                />
+                <a title={item}>
+                  <Image
+                    src={`${baseURL}/${item}.svg`}
+                    alt={item}
+                    width="75px"
+                    height="75px"
+                  />
+                </a>
               </motion.div>
             ))}
           </div>
@@ -118,12 +120,14 @@ const Technology: FunctionComponent<{ data: ITechnology[] }> = ({ data }) => {
                 viewport={{ once: true }}
                 key={item}
               >
-                <Image
-                  src={`${baseURL}/${item}.svg`}
-                  alt={item}
-                  width="75px"
-                  height="75px"
-                />
+                <a title={item}>
+                  <Image
+                    src={`${baseURL}/${item}.svg`}
+                    alt={item}
+                    width="75px"
+                    height="75px"
+                  />
+                </a>
               </motion.div>
             ))}
           </div>
@@ -150,12 +154,14 @@ const Technology: FunctionComponent<{ data: ITechnology[] }> = ({ data }) => {
                 viewport={{ once: true }}
                 key={item}
               >
-                <Image
-                  src={`${baseURL}/${item}.svg`}
-                  alt={item}
-                  width="75px"
-                  height="75px"
-                />
+                <a title={item}>
+                  <Image
+                    src={`${baseURL}/${item}.svg`}
+                    alt={item}
+                    width="75px"
+                    height="75px"
+                  />
+                </a>
               </motion.div>
             ))}
           </div>
