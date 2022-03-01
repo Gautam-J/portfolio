@@ -6,6 +6,7 @@ import instagram from "../public/assets/instagram.svg";
 import twitter from "../public/assets/twitter.svg";
 import contactLight from "../public/assets/contactLight.svg";
 import contactDark from "../public/assets/contactDark.svg";
+import buyMeACoffee from "../public/assets/buyMeACoffee.svg";
 import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
 import { linux, leftToRight, graphic } from "../animations/intro";
@@ -71,6 +72,22 @@ const Contact: FunctionComponent = () => {
           target="_blank"
         >
           gautam.jayapal@gmail.com
+        </motion.a>
+        <br />
+        <motion.a
+          variants={leftToRight}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+          href="https://www.buymeacoffee.com/gautamj"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <Image
+            src={buyMeACoffee}
+            alt="BuyMeACoffee"
+            className="transition duration-200 scale-90 hover:scale-100"
+          />
         </motion.a>
       </div>
 
