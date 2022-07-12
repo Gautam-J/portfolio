@@ -4,6 +4,7 @@ const nextConfig = {
   images: {
     domains: [
       `${process.env.S3_BUCKET_NAME}.s3.${process.env.S3_BUCKET_REGION}.amazonaws.com`,
+      "googletagmanager.com",
     ],
   },
   env: {
