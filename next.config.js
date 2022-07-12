@@ -9,6 +9,7 @@ const nextConfig = {
   env: {
     S3_BUCKET_NAME: process.env.S3_BUCKET_NAME,
     S3_BUCKET_REGION: process.env.S3_BUCKET_REGION,
+    GOOGLE_ID: process.env.GOOGLE_ID,
   },
 };
 
