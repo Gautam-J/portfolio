@@ -39,7 +39,22 @@ const About: FunctionComponent<{
         >
           About Me
         </motion.h1>
-        <p className="mt-2 lg:mt-4 lg:text-lg">{data.description}</p>
+        <p className="mt-2 lg:mt-4 lg:text-lg">
+          {data.description}
+          <br />
+          <br />
+          Read my blog {}
+          <span className="underline text-light-base08 dark:text-dark-base08">
+            <a
+              href="https://gautam-j.github.io"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              here
+            </a>
+          </span>
+          .
+        </p>
       </div>
 
       <div className="justify-center col-start-2 col-end-12">
