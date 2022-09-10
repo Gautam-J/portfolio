@@ -21,7 +21,8 @@ export const getExperienceData = async () => {
       {
         $sort: {
           onGoing: -1,
-          maxStartDate: -1,
+          minStartDate: -1,
+          maxEndDate: -1,
         },
       },
       {
